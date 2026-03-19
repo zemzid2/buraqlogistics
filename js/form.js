@@ -1,254 +1,158 @@
 /* ============================================================
-   form.js — Contact form validation and submission logic
-   Handles: field validation, error messages, and success state
-   Only active on the contact.html page
+   form.js — Contact form validation and Web3Forms submission
+   Also handles the FAQ accordion on how-it-works.html
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* ── Get the form element (only runs on contact.html) ── */
-  const form = document.querySelector('.inquiry-form');
-  if (!form) return; // Exit if no form found on this page
-
-
   /* ──────────────────────────────────────────────────
-     1. VALIDATION HELPERS
-     Functions to check individual field rules
+     CONTACT FORM (contact.html only)
   ────────────────────────────────────────────────── */
+  const form = document.querySelector('.contact-form');
 
-  /* Check that a text field is not empty */
-  function isNotEmpty(value) {
-    return value.trim().length > 0;
-  }
+  if (form) {
 
-  /* Basic email format check */
-  function isValidEmail(value) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(value.trim());
-  }
+    /* ── Validation helpers ── */
+    function isNotEmpty(v) { return v.trim().length > 0; }
+    function isEmail(v)    { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+    function isPhone(v)    { return v.replace(/\D/g, '').length >= 7; }
 
-  /* Phone: at least 7 digits, allows spaces, dashes, parentheses */
-  function isValidPhone(value) {
-    const digits = value.replace(/\D/g, '');
-    return digits.length >= 7;
-  }
-
-
-  /* ──────────────────────────────────────────────────
-     2. SHOW / HIDE ERROR ON A FIELD
-     Adds or removes the 'error' class on a .form-group
-     and sets the error message text
-  ────────────────────────────────────────────────── */
-
-  function showError(field, message) {
-    const group = field.closest('.form-group');
-    group.classList.add('error');
-    const errorEl = group.querySelector('.form-error');
-    if (errorEl) errorEl.textContent = message;
-  }
-
-  function clearError(field) {
-    const group = field.closest('.form-group');
-    group.classList.remove('error');
-  }
-
-
-  /* ──────────────────────────────────────────────────
-     3. REAL-TIME INLINE VALIDATION
-     Clears the error when the user starts fixing a field
-  ────────────────────────────────────────────────── */
-  const allInputs = form.querySelectorAll('input, select, textarea');
-
-  allInputs.forEach(function (input) {
-    // On focus: clear error so the field feels fresh
-    input.addEventListener('focus', function () {
-      clearError(this);
-    });
-
-    // On blur (leaving the field): validate immediately
-    input.addEventListener('blur', function () {
-      validateField(this);
-    });
-  });
-
-
-  /* ──────────────────────────────────────────────────
-     4. SINGLE FIELD VALIDATION FUNCTION
-     Validates one field and shows/hides its error
-  ────────────────────────────────────────────────── */
-  function validateField(field) {
-    const name  = field.name;
-    const value = field.value;
-    let valid = true;
-
-    if (name === 'full_name') {
-      if (!isNotEmpty(value)) {
-        showError(field, 'Please enter your full name.');
-        valid = false;
-      }
+    /* ── Show / clear error on a .field wrapper ── */
+    function showError(input) {
+      const group = input.closest('.field');
+      if (group) group.classList.add('error');
     }
 
-    if (name === 'company') {
-      if (!isNotEmpty(value)) {
-        showError(field, 'Please enter your company name.');
-        valid = false;
-      }
+    function clearError(input) {
+      const group = input.closest('.field');
+      if (group) group.classList.remove('error');
     }
 
-    if (name === 'email') {
-      if (!isValidEmail(value)) {
-        showError(field, 'Please enter a valid email address.');
-        valid = false;
-      }
-    }
+    /* ── Validate a single field ── */
+    function validateField(input) {
+      const name  = input.name;
+      const value = input.value;
+      let valid   = true;
 
-    if (name === 'phone') {
-      if (!isNotEmpty(value)) {
-        showError(field, 'Please enter a phone number.');
-        valid = false;
-      } else if (!isValidPhone(value)) {
-        showError(field, 'Please enter a valid phone number.');
-        valid = false;
-      }
-    }
+      if (name === 'full_name'    && !isNotEmpty(value)) valid = false;
+      if (name === 'company'      && !isNotEmpty(value)) valid = false;
+      if (name === 'email'        && !isEmail(value))    valid = false;
+      if (name === 'phone'        && (!isNotEmpty(value) || !isPhone(value))) valid = false;
+      if (name === 'service_type' && !isNotEmpty(value)) valid = false;
+      if (name === 'cargo_type'   && !isNotEmpty(value)) valid = false;
 
-    if (name === 'service_type') {
-      if (!isNotEmpty(value)) {
-        showError(field, 'Please select a service type.');
-        valid = false;
-      }
-    }
-
-    if (name === 'cargo_type') {
-      if (!isNotEmpty(value)) {
-        showError(field, 'Please describe your cargo.');
-        valid = false;
-      }
-    }
-
-    return valid;
-  }
-
-
-  /* ──────────────────────────────────────────────────
-     5. FULL FORM VALIDATION
-     Validates all required fields at once, returns
-     true only if everything passes
-  ────────────────────────────────────────────────── */
-  function validateForm() {
-    // Select only fields that are marked required
-    const requiredFields = form.querySelectorAll('[required]');
-    let allValid = true;
-
-    requiredFields.forEach(function (field) {
-      const fieldValid = validateField(field);
-      if (!fieldValid) {
-        allValid = false;
-      }
-    });
-
-    return allValid;
-  }
-
-
-  /* ──────────────────────────────────────────────────
-     6. FORM SUBMIT HANDLER
-     Validates the form, then shows a success message.
-     In production, replace the success block with an
-     actual fetch() call to your backend or form service.
-  ────────────────────────────────────────────────── */
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault(); // Prevent default page reload
-
-    // Run full validation first — stop if any required field fails
-    const isValid = validateForm();
-    if (!isValid) {
-      const firstError = form.querySelector('.form-group.error input, .form-group.error select, .form-group.error textarea');
-      if (firstError) {
-        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        firstError.focus();
-      }
-      return;
-    }
-
-    /* ── SUBMIT TO WEB3FORMS ──
-       Collects all form fields (including hidden access_key),
-       sends them as JSON to the Web3Forms API, then shows
-       either the success message or an error to the user.
-    ── */
-
-    // Disable the submit button and show a sending state
-    const submitBtn = form.querySelector('.form-submit');
-    const originalBtnText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending…';
-    submitBtn.disabled = true;
-
-    try {
-      // Gather all form field values into a plain object
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-
-      // Send to Web3Forms API as JSON
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        // ── SUCCESS: hide the form, show the success message ──
-        const formWrap   = document.querySelector('.contact-form-wrap');
-        const successMsg = document.querySelector('.form-success');
-
-        if (formWrap && successMsg) {
-          form.style.display                               = 'none';
-          formWrap.querySelector('h2').style.display       = 'none';
-          formWrap.querySelector('p').style.display        = 'none';
-          successMsg.classList.add('visible');
-        }
+      if (!valid) {
+        showError(input);
       } else {
-        // ── API returned an error ──
-        throw new Error(result.message || 'Submission failed.');
+        clearError(input);
       }
 
-    } catch (error) {
-      // ── Network error or API error — restore button and alert user ──
-      submitBtn.textContent = originalBtnText;
-      submitBtn.disabled    = false;
-      alert('Something went wrong. Please try again or contact us directly by phone or email.');
-      console.error('Web3Forms error:', error);
+      return valid;
     }
-  });
+
+    /* ── Real-time: clear error on focus; validate on blur ── */
+    form.querySelectorAll('input, select, textarea').forEach(function (input) {
+      input.addEventListener('focus', function () { clearError(this); });
+      input.addEventListener('blur',  function () { validateField(this); });
+    });
+
+    /* ── Full form validation ── */
+    function validateAll() {
+      const required = form.querySelectorAll('[required]');
+      let allValid = true;
+      required.forEach(function (input) {
+        if (!validateField(input)) allValid = false;
+      });
+      return allValid;
+    }
+
+    /* ── Submit handler — Web3Forms ── */
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      if (!validateAll()) {
+        // Scroll to first error
+        const firstErr = form.querySelector('.field.error input, .field.error select, .field.error textarea');
+        if (firstErr) {
+          firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstErr.focus();
+        }
+        return;
+      }
+
+      // Show sending state
+      const submitBtn = form.querySelector('.form-submit-btn');
+      const origText  = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.innerHTML  = 'Sending…';
+        submitBtn.disabled   = true;
+      }
+
+      try {
+        const formData = new FormData(form);
+        const data     = Object.fromEntries(formData.entries());
+
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method:  'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept':        'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          // Hide form, show success message
+          form.style.display = 'none';
+          const card = document.querySelector('.form-card');
+          if (card) {
+            const h2 = card.querySelector('h2');
+            const p  = card.querySelector('p');
+            if (h2) h2.style.display = 'none';
+            if (p)  p.style.display  = 'none';
+          }
+          const successEl = document.getElementById('formSuccess');
+          if (successEl) successEl.classList.add('visible');
+        } else {
+          throw new Error(result.message || 'Submission failed.');
+        }
+
+      } catch (err) {
+        if (submitBtn) {
+          submitBtn.innerHTML = origText;
+          submitBtn.disabled  = false;
+        }
+        alert('Something went wrong. Please try again or contact us directly by phone or email.');
+        console.error('Web3Forms error:', err);
+      }
+    });
+  }
 
 
   /* ──────────────────────────────────────────────────
-     7. FAQ ACCORDION (on how-it-works.html)
-     Clicking a question expands/collapses its answer.
-     Also runs here since it's a simple toggle behaviour.
+     FAQ ACCORDION
+     Works on how-it-works.html
+     Question button class: .faq-item__q
+     Toggle button class: .faq-toggle
   ────────────────────────────────────────────────── */
   const faqItems = document.querySelectorAll('.faq-item');
 
   faqItems.forEach(function (item) {
-    const question = item.querySelector('.faq-item__question');
+    const question = item.querySelector('.faq-item__q');
     if (!question) return;
 
     question.addEventListener('click', function () {
       const isOpen = item.classList.contains('open');
 
-      // Close all other open items first (accordion behaviour)
+      // Close all (accordion behaviour)
       faqItems.forEach(function (other) {
         other.classList.remove('open');
       });
 
-      // Toggle the clicked item
-      if (!isOpen) {
-        item.classList.add('open');
-      }
+      // Toggle clicked one
+      if (!isOpen) item.classList.add('open');
     });
   });
 

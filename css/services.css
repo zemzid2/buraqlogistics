@@ -1,236 +1,171 @@
 /* ============================================================
-   services.css — Styles specific to the Services page
-   Covers: services navigation tabs, individual service
-   detail blocks, and a comparison table
+   services.css — Services page styles
+   Each service gets an image background on the visual side.
    ============================================================ */
 
-/* ── SERVICES NAVIGATION BAR ── */
-/* Sticky tab-style nav to jump between services */
-.services-nav {
-  background-color: var(--color-white);
-  border-bottom: 2px solid var(--color-gray-100);
+/* ── PAGE HERO ──
+   IMAGE: images/services-hero.jpg → search "shipping containers port aerial"
+── */
+.page-hero.services-hero {
+  background-image: url('../images/services-hero.jpg');
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── STICKY SERVICES NAV ── */
+.svc-nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-100);
   position: sticky;
   top: var(--nav-height);
   z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
-.services-nav__inner {
+.svc-nav__inner {
   display: flex;
   overflow-x: auto;
-  gap: 0;
-  /* Hide scrollbar but keep functionality */
-  -ms-overflow-style: none;
   scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.services-nav__inner::-webkit-scrollbar {
-  display: none;
-}
+.svc-nav__inner::-webkit-scrollbar { display: none; }
 
-/* Each nav tab */
-.services-nav__tab {
+/* Each tab */
+.svc-nav__tab {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 18px 24px;
+  padding: 20px 24px;
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-gray-500);
+  color: var(--gray-500);
   border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
+  margin-bottom: -1px;
   white-space: nowrap;
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
   text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
 }
 
-.services-nav__tab svg {
-  width: 16px;
-  height: 16px;
+.svc-nav__tab svg {
+  width: 15px;
+  height: 15px;
   fill: currentColor;
 }
 
-.services-nav__tab:hover,
-.services-nav__tab.active {
-  color: var(--color-orange);
-  border-bottom-color: var(--color-orange);
+.svc-nav__tab:hover,
+.svc-nav__tab.active {
+  color: var(--orange);
+  border-bottom-color: var(--orange);
 }
 
-/* ── SERVICE DETAIL BLOCK ── */
-/* Alternating layout: text left + visual right, then right + left */
-.service-detail {
-  padding: 96px 0;
+/* ── SERVICE DETAIL BLOCKS ──
+   Alternating layout: text / image columns swap each row.
+   Odd: text left, image right
+   Even: image left, text right
+── */
+.svc-detail {
+  padding: 100px 0;
 }
 
-/* Odd-numbered services get cream background, even get white */
-.service-detail:nth-child(odd) {
-  background-color: var(--color-cream);
-}
+.svc-detail:nth-child(odd)  { background: var(--off-white); }
+.svc-detail:nth-child(even) { background: var(--white); }
 
-.service-detail:nth-child(even) {
-  background-color: var(--color-white);
-}
-
-.service-detail__inner {
+.svc-detail__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px;
+  gap: 80px;
   align-items: center;
 }
 
-/* Reverse layout for even-numbered services */
-.service-detail:nth-child(even) .service-detail__inner {
+/* Even rows: reverse column order */
+.svc-detail:nth-child(even) .svc-detail__inner {
   direction: rtl;
 }
 
-.service-detail:nth-child(even) .service-detail__content,
-.service-detail:nth-child(even) .service-detail__visual {
+.svc-detail:nth-child(even) .svc-detail__content,
+.svc-detail:nth-child(even) .svc-detail__visual {
   direction: ltr;
 }
 
-/* Service text content */
-.service-detail__content .section-label {
+/* ── Text column ── */
+.svc-detail__content .svc-num {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: var(--orange);
+  opacity: 0.7;
   display: block;
-  margin-bottom: 12px;
-}
-
-.service-detail__content h2 {
-  text-transform: uppercase;
   margin-bottom: 8px;
 }
 
-.service-detail__content > p {
-  font-size: 1.05rem;
+.svc-detail__content h2 {
+  color: var(--navy);
+  margin-bottom: 8px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.svc-detail__content > p {
+  font-size: 1.02rem;
+  color: var(--gray-500);
+  line-height: 1.85;
   margin-bottom: 32px;
 }
 
-/* Bullet list of what the service includes */
-.service-detail__list {
+/* Bullet feature list */
+.svc-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   margin-bottom: 36px;
 }
 
-.service-detail__list li {
+.svc-list li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  font-size: 0.95rem;
-  color: var(--color-gray-700);
+  gap: 14px;
+  font-size: 0.92rem;
+  color: var(--gray-700);
+  line-height: 1.6;
 }
 
-/* Orange bullet dot */
-.service-detail__list li::before {
+/* Orange dot bullet */
+.svc-list li::before {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background-color: var(--color-orange);
+  background: var(--orange);
   flex-shrink: 0;
   margin-top: 7px;
 }
 
-/* Visual side of service detail: icon + stats cards */
-.service-detail__visual {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Large icon banner at top of visual column */
-.service-visual__banner {
-  background-color: var(--color-navy);
-  border-radius: var(--radius-md);
-  padding: 56px 32px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Decorative circle in background of banner */
-.service-visual__banner::after {
-  content: '';
-  position: absolute;
-  bottom: -30px;
-  right: -30px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: rgba(232, 93, 4, 0.15);
-}
-
-.service-visual__banner svg {
-  width: 72px;
-  height: 72px;
-  fill: var(--color-orange);
-  margin-bottom: 16px;
-  position: relative;
-  z-index: 1;
-}
-
-.service-visual__banner h3 {
-  color: var(--color-white);
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  z-index: 1;
-}
-
-/* Small fact cards below the banner */
-.service-visual__facts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.fact-card {
-  background-color: var(--color-gray-100);
-  border-radius: var(--radius-sm);
-  padding: 20px 16px;
-  text-align: center;
-  border-bottom: 3px solid var(--color-orange);
-}
-
-.fact-card__value {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--color-navy);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.fact-card__label {
-  font-size: 0.8rem;
-  color: var(--color-gray-500);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-/* ── SERVICE PROCESS MINI-STEPS ── */
-/* Compact step list inside service detail */
-.service-process {
+/* Mini process steps */
+.svc-process {
+  border-top: 1px solid var(--gray-100);
+  padding-top: 28px;
   margin-top: 8px;
 }
 
-.service-process h5 {
+.svc-process__label {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--color-gray-500);
+  color: var(--gray-300);
   margin-bottom: 16px;
 }
 
-.service-process__steps {
+.svc-process__steps {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .sp-step {
@@ -239,15 +174,14 @@
   gap: 14px;
 }
 
-/* Small numbered badge */
-.sp-step__num {
-  width: 28px;
-  height: 28px;
+.sp-step__badge {
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background-color: var(--color-orange);
-  color: var(--color-white);
+  background: var(--orange);
+  color: var(--white);
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -256,121 +190,209 @@
 }
 
 .sp-step p {
-  font-size: 0.9rem;
-  color: var(--color-gray-700);
+  font-size: 0.88rem;
+  color: var(--gray-700);
   margin: 0;
 }
 
-/* ── SERVICES COMPARISON TABLE ── */
-.services-comparison {
-  background-color: var(--color-navy);
-  padding: 88px 0;
+/* ── Visual column: image with stats overlay ── */
+.svc-detail__visual {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.services-comparison__header {
+/* Main image block */
+.svc-img-block {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  height: 380px;
+  box-shadow: var(--shadow-xl);
+}
+
+.svc-img-block__photo {
+  position: absolute;
+  inset: 0;
+  background-color: var(--navy-mid);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.svc-img-block:hover .svc-img-block__photo {
+  transform: scale(1.04);
+}
+
+/* Dark gradient at bottom of image */
+.svc-img-block__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12,26,46,0.7) 0%, transparent 50%);
+}
+
+/* Service name badge at bottom of image */
+.svc-img-block__badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.svc-img-block__badge-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--orange);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svc-img-block__badge-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--white);
+}
+
+.svc-img-block__badge h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+/* Small fact cards below the image */
+.svc-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.svc-fact {
+  background: var(--navy);
+  border-radius: var(--r-md);
+  padding: 22px 20px;
+  text-align: center;
+  border-bottom: 3px solid var(--orange);
+}
+
+.svc-fact__val {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--white);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.svc-fact__lbl {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+/* ── Image paths for each service ──
+   road:      images/road.jpg
+   railway:   images/railway.jpg
+   air:       images/air.jpg
+   container: images/container.jpg
+   warehouse: images/warehouse.jpg
+   door:      images/delivery.jpg
+── */
+.svc-detail--road      .svc-img-block__photo { background-image: url('../images/road.jpg'); }
+.svc-detail--railway   .svc-img-block__photo { background-image: url('../images/railway.jpg'); }
+.svc-detail--air       .svc-img-block__photo { background-image: url('../images/air.jpg'); }
+.svc-detail--container .svc-img-block__photo { background-image: url('../images/container.jpg'); }
+.svc-detail--warehouse .svc-img-block__photo { background-image: url('../images/warehouse.jpg'); }
+.svc-detail--door      .svc-img-block__photo { background-image: url('../images/delivery.jpg'); }
+
+/* ── COMPARISON TABLE ── */
+.svc-comparison {
+  background: var(--navy);
+  padding: 100px 0;
+}
+
+.svc-comparison__header {
   text-align: center;
   max-width: 560px;
   margin: 0 auto 56px;
 }
 
-.services-comparison__header h2 {
-  color: var(--color-white);
-}
+.svc-comparison__header h2 { color: var(--white); }
+.svc-comparison__header p  { color: rgba(255,255,255,0.55); }
 
-.services-comparison__header p {
-  color: var(--color-gray-300);
-}
-
-/* The comparison table itself */
-.comparison-table-wrap {
+.cmp-table-wrap {
   overflow-x: auto;
-  border-radius: var(--radius-md);
+  border-radius: var(--r-md);
+  border: 1px solid rgba(255,255,255,0.07);
 }
 
-.comparison-table {
+.cmp-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: var(--color-navy-light);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  background: var(--navy-mid);
 }
 
-.comparison-table thead th {
-  background-color: var(--color-orange);
-  color: var(--color-white);
+.cmp-table thead th {
+  padding: 18px 20px;
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-align: left;
+  background: rgba(232,93,4,0.9);
+  color: var(--white);
+}
+
+.cmp-table thead th:first-child {
+  background: rgba(0,0,0,0.3);
+  color: var(--gray-500);
+}
+
+.cmp-table tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.15s;
+}
+
+.cmp-table tbody tr:last-child { border-bottom: none; }
+.cmp-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+.cmp-table tbody td {
+  padding: 16px 20px;
+  font-size: 0.88rem;
+  color: var(--gray-300);
+}
+
+.cmp-table tbody td:first-child {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 18px 20px;
-  text-align: left;
+  color: rgba(255,255,255,0.55);
+  background: rgba(0,0,0,0.1);
 }
 
-.comparison-table thead th:first-child {
-  background-color: var(--color-black);
-}
+.tbl-yes  { color: #4ade80; font-weight: 700; }
+.tbl-no   { color: var(--gray-700); }
+.tbl-best { color: var(--orange); font-weight: 600; }
 
-.comparison-table tbody tr {
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.comparison-table tbody tr:last-child {
-  border-bottom: none;
-}
-
-.comparison-table tbody tr:hover {
-  background-color: rgba(255,255,255,0.04);
-}
-
-.comparison-table tbody td {
-  padding: 16px 20px;
-  font-size: 0.9rem;
-  color: var(--color-gray-300);
-}
-
-/* Row label (first column) */
-.comparison-table tbody td:first-child {
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--color-white);
-  background-color: rgba(0,0,0,0.15);
-}
-
-/* Checkmark and X symbols in table */
-.table-check {
-  color: #4ade80;
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.table-cross {
-  color: var(--color-gray-500);
-  font-size: 1rem;
-}
-
-/* ── SERVICES PAGE RESPONSIVE ── */
+/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .service-detail__inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .service-detail:nth-child(even) .service-detail__inner {
-    direction: ltr;
-  }
+  .svc-detail__inner { grid-template-columns: 1fr; gap: 48px; }
+  .svc-detail:nth-child(even) .svc-detail__inner { direction: ltr; }
 }
 
 @media (max-width: 768px) {
-  .service-detail {
-    padding: 64px 0;
-  }
-
-  .services-nav__tab {
-    padding: 14px 16px;
-    font-size: 0.78rem;
-  }
+  .svc-detail { padding: 64px 0; }
+  .svc-img-block { height: 280px; }
+  .svc-nav__tab { padding: 16px 16px; font-size: 0.72rem; }
 }

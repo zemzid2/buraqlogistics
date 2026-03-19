@@ -3,37 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reliable freight and logistics solutions via road, rail, and air. Door-to-door delivery for importers across the country." />
-  <title>BuraqLogistics Logistics — Freight &amp; Transportation Solutions</title>
-
-  <!-- Global shared styles -->
+  <meta name="description" content="Burraq Logistics — Pakistan's trusted freight partner. Road, rail, air, and door-to-door cargo solutions for importers." />
+  <title>Burraq Logistics — Freight &amp; Transportation Solutions</title>
   <link rel="stylesheet" href="css/global.css" />
-  <!-- Page-specific styles -->
   <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
 
   <!-- ============================================================
-       NAVBAR — Shared across all pages
-       Logo, navigation links, and CTA button.
-       The hamburger button appears on mobile only.
+       NAVBAR
   ============================================================ -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
+  <nav class="navbar">
+    <div class="container navbar__inner">
 
-      <!-- Logo: icon + company name -->
-      <a href="index.html" class="navbar__logo" aria-label="BuraqLogistics Home">
-        <div class="navbar__logo-icon">
-          <!-- Truck SVG icon -->
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
-          </svg>
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-mark">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
         </div>
-        <span class="navbar__logo-text">Buraq<span>logistics</span></span>
+        <span class="navbar__logo-name">Burraq<span>Logistics</span></span>
       </a>
 
-      <!-- Desktop navigation links -->
-      <ul class="navbar__links" role="list">
+      <!-- Desktop links -->
+      <ul class="navbar__links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
@@ -41,85 +33,102 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
-      <!-- Desktop CTA button -->
+      <!-- Desktop CTA -->
       <a href="contact.html" class="navbar__cta">Get a Quote</a>
 
-      <!-- Hamburger button (visible on mobile only) -->
-      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+      <!-- Mobile hamburger -->
+      <button class="navbar__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
     </div>
 
-    <!-- Mobile dropdown menu -->
-    <nav class="navbar__mobile-menu" aria-label="Mobile navigation">
+    <!-- Mobile dropdown -->
+    <div class="navbar__mobile-menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="how-it-works.html">How It Works</a>
       <a href="contact.html">Contact</a>
-      <a href="contact.html" style="color: var(--color-orange); margin-top: 8px;">Get a Quote →</a>
-    </nav>
+      <a href="contact.html" style="color:var(--orange);margin-top:8px;">Get a Quote →</a>
+    </div>
   </nav>
 
 
   <!-- ============================================================
-       HERO SECTION
-       Main banner with headline, supporting text, and CTA buttons.
-       Right side shows a 3-card visual with transport modes.
+       HERO
+       IMAGE NEEDED: images/hero-bg.jpg
+       Download from unsplash.com — search "freight truck highway night"
   ============================================================ -->
-  <section class="hero" aria-labelledby="hero-heading">
+  <section class="hero">
     <div class="container">
       <div class="hero__inner">
 
-        <!-- Left: headline and CTAs -->
+        <!-- Left: text content -->
         <div class="hero__content">
-          <span class="section-label">Trusted Freight &amp; Logistics</span>
-          <h1 id="hero-heading">
-            Moving Cargo,<br>
-            <em>Connecting</em><br>
-            Commerce
+          <span class="eyebrow">Pakistan's Trusted Freight Partner</span>
+
+          <h1 class="hero__title">
+            Moving Cargo.<br>
+            <span class="highlight">Connecting</span><br>
+            Commerce.
           </h1>
-          <p>
+
+          <p class="hero__subtitle">
             From container arrival at our adda to your factory floor —
             we handle road, rail, air, and door-to-door freight with
-            precision and reliability.
+            speed, precision, and reliability.
           </p>
-          <div class="hero__buttons">
-            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
-            <a href="how-it-works.html" class="btn btn-secondary">How It Works</a>
+
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn-primary">
+              Request a Quote
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </a>
+            <a href="how-it-works.html" class="btn btn-outline">How It Works</a>
           </div>
         </div>
 
-        <!-- Right: transport mode cards -->
-        <div class="hero__visual" aria-hidden="true">
+        <!-- Right: stats panel -->
+        <div class="hero__stats-panel">
 
-          <!-- Top full-width card: warehouse / adda -->
-          <div class="hero__card">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.47 0 12.36 0c-1.71 0-3.19.75-4.24 1.95L6 4 4.24 1.95A5.61 5.61 0 000 4.64C0 7.61 2.39 10 5.36 10H6v10h12V10h.64C21.37 10 24 7.37 24 4.64 24 2.27 22.27.44 20.09.04z"/>
-            </svg>
-            <h4>Warehouse &amp; Adda</h4>
-            <p>Goods received, unloaded &amp; prepared for dispatch</p>
+          <div class="hero-stat">
+            <div class="hero-stat__icon">
+              <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+            </div>
+            <div>
+              <div class="hero-stat__num">500+</div>
+              <div class="hero-stat__label">Clients Served</div>
+            </div>
           </div>
 
-          <!-- Road transport card -->
-          <div class="hero__card">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/>
-            </svg>
-            <h4>Road Transport</h4>
-            <p>Trucks dispatched to destination</p>
+          <div class="hero-stat">
+            <div class="hero-stat__icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2H18v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zm-5 5h4v3H7V7zm10 8.5c0 .83-.67 1.5-1.5 1.5h-7c-.83 0-1.5-.67-1.5-1.5V12h10v3.5zm0-5.5h-4V7h4v3z"/></svg>
+            </div>
+            <div>
+              <div class="hero-stat__num">3 Modes</div>
+              <div class="hero-stat__label">Road · Rail · Air</div>
+            </div>
           </div>
 
-          <!-- Railway freight card -->
-          <div class="hero__card">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2H18v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zm0 2c3.51 0 5.44.49 5.91 1H6.09C6.56 4.49 8.49 4 12 4zm-5 3h4v3H7V7zm10 8.5c0 .83-.67 1.5-1.5 1.5h-7c-.83 0-1.5-.67-1.5-1.5V12h10v3.5zm0-5.5h-4V7h4v3z"/>
-            </svg>
-            <h4>Railway Freight</h4>
-            <p>Bogies loaded for rail network</p>
+          <div class="hero-stat">
+            <div class="hero-stat__icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div>
+              <div class="hero-stat__num">15+ Yrs</div>
+              <div class="hero-stat__label">Industry Experience</div>
+            </div>
+          </div>
+
+          <div class="hero-stat">
+            <div class="hero-stat__icon">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <div>
+              <div class="hero-stat__num">100%</div>
+              <div class="hero-stat__label">Door-to-Door Ready</div>
+            </div>
           </div>
 
         </div>
@@ -129,149 +138,165 @@
 
 
   <!-- ============================================================
-       STATS BAR
-       Key business numbers displayed in a dark strip below the hero
+       TRUST BAR — Below hero, quick trust signals
   ============================================================ -->
-  <section class="stats-bar" aria-label="Company statistics">
+  <div class="trust-bar">
     <div class="container">
-      <div class="stats-bar__grid">
-        <div class="stat-item">
-          <div class="stat-item__number">500+</div>
-          <div class="stat-item__label">Clients Served</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-item__number">15+</div>
-          <div class="stat-item__label">Years Experience</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-item__number">3</div>
-          <div class="stat-item__label">Transport Modes</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-item__number">100%</div>
-          <div class="stat-item__label">Door-to-Door Capability</div>
+      <div class="trust-bar__inner">
+        <span class="trust-bar__label">Trusted by importers for</span>
+        <div class="trust-bar__divider"></div>
+        <div class="trust-bar__items">
+          <span class="trust-bar__item">
+            <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+            Road Transport
+          </span>
+          <span class="trust-bar__item">
+            <svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2H18v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4z"/></svg>
+            Railway Freight
+          </span>
+          <span class="trust-bar__item">
+            <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+            Air Freight
+          </span>
+          <span class="trust-bar__item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            Door-to-Door
+          </span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
 
   <!-- ============================================================
-       SERVICES OVERVIEW
-       Six service cards giving a high-level summary of each offering.
-       Each links to the full Services page.
+       SERVICES SECTION
+       IMAGE NEEDED per card — see css/index.css for file names
   ============================================================ -->
-  <section class="services-overview section-padding" aria-labelledby="services-heading">
+  <section class="services-section">
     <div class="container">
 
-      <!-- Section heading -->
-      <div class="services-overview__header">
-        <span class="section-label">What We Offer</span>
-        <h2 id="services-heading">End-to-End Freight Solutions</h2>
-        <div class="heading-underline"></div>
-        <p>
-          From the moment your container arrives at our facility to the final
-          delivery at your doorstep — we cover every step of the journey.
-        </p>
+      <div class="services-section__header">
+        <div class="services-section__header-left">
+          <span class="eyebrow">What We Do</span>
+          <h2>End-to-End Freight Solutions</h2>
+          <div class="accent-line"></div>
+          <p>Complete logistics from container arrival to your doorstep — one partner, every step.</p>
+        </div>
+        <a href="services.html" class="btn btn-outline-dark" style="flex-shrink:0;">
+          All Services
+          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </a>
       </div>
 
-      <!-- Grid of service cards -->
+      <!-- 6 service cards — each has a background image set in CSS -->
       <div class="services-grid">
 
-        <!-- Service card: Road Transport -->
-        <article class="service-card">
-          <div class="service-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+        <!-- Road Transport -->
+        <article class="svc-card svc-card--road">
+          <div class="svc-card__img"></div>
+          <div class="svc-card__overlay"></div>
+          <div class="svc-card__stripe"></div>
+          <div class="svc-card__content">
+            <div class="svc-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+            </div>
+            <div class="svc-card__title">Road Transport</div>
+            <p class="svc-card__desc">Direct truck dispatch from our adda to your delivery address — flexible and reliable.</p>
+            <a href="services.html#road" class="svc-card__link">
+              Learn More
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </a>
           </div>
-          <h3>Road Transport</h3>
-          <p>
-            Cargo loaded onto our trucks and dispatched efficiently across
-            road networks — reliable, direct, and trackable.
-          </p>
-          <a href="services.html#road" class="service-card__link">
-            Learn More
-            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-          </a>
         </article>
 
-        <!-- Service card: Railway Freight -->
-        <article class="service-card">
-          <div class="service-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2H18v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zm-5 5h4v3H7V7zm10 8.5c0 .83-.67 1.5-1.5 1.5h-7c-.83 0-1.5-.67-1.5-1.5V12h10v3.5zm0-5.5h-4V7h4v3z"/></svg>
+        <!-- Railway Freight -->
+        <article class="svc-card svc-card--railway">
+          <div class="svc-card__img"></div>
+          <div class="svc-card__overlay"></div>
+          <div class="svc-card__stripe"></div>
+          <div class="svc-card__content">
+            <div class="svc-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2H18v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zm-5 5h4v3H7V7zm10 8.5c0 .83-.67 1.5-1.5 1.5h-7c-.83 0-1.5-.67-1.5-1.5V12h10v3.5zm0-5.5h-4V7h4v3z"/></svg>
+            </div>
+            <div class="svc-card__title">Railway Freight</div>
+            <p class="svc-card__desc">Bulk cargo loaded into bogies and dispatched via national rail — economical for long haul.</p>
+            <a href="services.html#railway" class="svc-card__link">
+              Learn More
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </a>
           </div>
-          <h3>Railway Freight</h3>
-          <p>
-            Goods loaded into train bogies and dispatched through the national
-            rail network — ideal for large-volume, long-distance shipments.
-          </p>
-          <a href="services.html#railway" class="service-card__link">
-            Learn More
-            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-          </a>
         </article>
 
-        <!-- Service card: Air Freight -->
-        <article class="service-card">
-          <div class="service-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+        <!-- Air Freight -->
+        <article class="svc-card svc-card--air">
+          <div class="svc-card__img"></div>
+          <div class="svc-card__overlay"></div>
+          <div class="svc-card__stripe"></div>
+          <div class="svc-card__content">
+            <div class="svc-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+            </div>
+            <div class="svc-card__title">Air Freight</div>
+            <p class="svc-card__desc">Time-critical shipments handled with priority coordination through air channels.</p>
+            <a href="services.html#air" class="svc-card__link">
+              Learn More
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </a>
           </div>
-          <h3>Air Freight</h3>
-          <p>
-            Fast-track your cargo through air channels for time-sensitive
-            shipments — coordinated handling from arrival to dispatch.
-          </p>
-          <a href="services.html#air" class="service-card__link">
-            Learn More
-            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-          </a>
         </article>
 
-        <!-- Service card: Container Freight -->
-        <article class="service-card">
-          <div class="service-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H4V8h4v4h2V8h4v4h2V8h4v8z"/></svg>
+        <!-- Container Freight -->
+        <article class="svc-card svc-card--container">
+          <div class="svc-card__img"></div>
+          <div class="svc-card__overlay"></div>
+          <div class="svc-card__stripe"></div>
+          <div class="svc-card__content">
+            <div class="svc-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H4V8h4v4h2V8h4v4h2V8h4v8z"/></svg>
+            </div>
+            <div class="svc-card__title">Container Freight</div>
+            <p class="svc-card__desc">Goods transferred from import containers to our managed containers for streamlined dispatch.</p>
+            <a href="services.html#container" class="svc-card__link">
+              Learn More
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </a>
           </div>
-          <h3>Container Freight</h3>
-          <p>
-            We unload from original containers and reload into our managed
-            containers — ensuring safe, streamlined re-dispatch.
-          </p>
-          <a href="services.html#container" class="service-card__link">
-            Learn More
-            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-          </a>
         </article>
 
-        <!-- Service card: Warehouse / Adda -->
-        <article class="service-card">
-          <div class="service-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <!-- Warehouse & Adda -->
+        <article class="svc-card svc-card--warehouse">
+          <div class="svc-card__img"></div>
+          <div class="svc-card__overlay"></div>
+          <div class="svc-card__stripe"></div>
+          <div class="svc-card__content">
+            <div class="svc-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            </div>
+            <div class="svc-card__title">Warehouse &amp; Adda</div>
+            <p class="svc-card__desc">Our central hub where all containers are received, unloaded, sorted, and prepared for dispatch.</p>
+            <a href="services.html#warehouse" class="svc-card__link">
+              Learn More
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </a>
           </div>
-          <h3>Warehouse &amp; Adda</h3>
-          <p>
-            Our facility is the central hub where all incoming containers are
-            received, unloaded, sorted, and prepared for the next leg.
-          </p>
-          <a href="services.html#warehouse" class="service-card__link">
-            Learn More
-            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-          </a>
         </article>
 
-        <!-- Service card: Door-to-Door -->
-        <article class="service-card">
-          <div class="service-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <!-- Door-to-Door -->
+        <article class="svc-card svc-card--door">
+          <div class="svc-card__img"></div>
+          <div class="svc-card__overlay"></div>
+          <div class="svc-card__stripe"></div>
+          <div class="svc-card__content">
+            <div class="svc-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div class="svc-card__title">Door-to-Door</div>
+            <p class="svc-card__desc">Full-service delivery from our adda directly to your factory, warehouse, or any address.</p>
+            <a href="services.html#door-to-door" class="svc-card__link">
+              Learn More
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </a>
           </div>
-          <h3>Door-to-Door Delivery</h3>
-          <p>
-            Full service from our adda all the way to your factory,
-            warehouse, or any specified address — total convenience.
-          </p>
-          <a href="services.html#door-to-door" class="service-card__link">
-            Learn More
-            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-          </a>
         </article>
 
       </div>
@@ -280,250 +305,249 @@
 
 
   <!-- ============================================================
-       PROCESS TEASER
-       A simplified 4-step overview that teases the How It Works page.
-       Dark navy background for visual contrast.
+       ABOUT TEASER
+       IMAGE NEEDED: images/about-teaser.jpg
+       Search: "logistics professionals warehouse team"
   ============================================================ -->
-  <section class="process-teaser section-padding" aria-labelledby="process-heading">
+  <section class="about-teaser">
+    <div class="container">
+      <div class="about-teaser__inner">
+
+        <!-- Left: photo -->
+        <div class="about-teaser__photo">
+          <!-- Badge overlapping bottom-right of photo -->
+          <div class="about-teaser__badge">
+            <span class="about-teaser__badge-num">15+</span>
+            <span class="about-teaser__badge-label">Years of<br>Experience</span>
+          </div>
+        </div>
+
+        <!-- Right: content on navy background -->
+        <div class="about-teaser__content">
+          <span class="eyebrow" style="color:rgba(255,255,255,0.45);">Who We Are</span>
+          <h2>Built for Importers.<br>Driven by Reliability.</h2>
+          <div class="accent-line"></div>
+
+          <p>
+            Burraq Logistics was founded to solve a specific challenge:
+            once your container arrives, the real logistics work begins.
+            We handle everything from that point — so you don't have to.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature__dot"></div>
+              <div>
+                <h5>Multi-Modal Transport</h5>
+                <p>Road, rail, and air options coordinated under one roof.</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature__dot"></div>
+              <div>
+                <h5>Central Adda Facility</h5>
+                <p>All containers received, unloaded, and sorted at our hub.</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature__dot"></div>
+              <div>
+                <h5>Door-to-Door Service</h5>
+                <p>We deliver directly to your factory or warehouse — no middle steps.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="about.html" class="btn btn-primary">
+            Our Story
+            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       STATS BAND — 4 key numbers
+  ============================================================ -->
+  <section class="stats-band">
+    <div class="container">
+      <div class="stats-band__grid">
+
+        <div class="stats-band__item">
+          <div class="stats-band__num">500<sup>+</sup></div>
+          <div class="stats-band__label">Clients Served</div>
+        </div>
+
+        <div class="stats-band__item">
+          <div class="stats-band__num">15<sup>+</sup></div>
+          <div class="stats-band__label">Years Operating</div>
+        </div>
+
+        <div class="stats-band__item">
+          <div class="stats-band__num">3</div>
+          <div class="stats-band__label">Transport Modes</div>
+        </div>
+
+        <div class="stats-band__item">
+          <div class="stats-band__num">100<sup>%</sup></div>
+          <div class="stats-band__label">Door-to-Door Ready</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PROCESS TEASER — 4 steps
+  ============================================================ -->
+  <section class="process-teaser section-pad">
     <div class="container">
 
-      <!-- Section heading -->
       <div class="process-teaser__header">
-        <span class="section-label" style="color: rgba(255,255,255,0.5);">The Process</span>
-        <h2 id="process-heading" style="color: var(--color-white);">From Container to Destination</h2>
-        <div class="heading-underline centered"></div>
-        <p>A streamlined 4-step process that gets your cargo moving fast.</p>
+        <span class="eyebrow" style="color:rgba(255,255,255,0.4);">The Process</span>
+        <h2 style="color:var(--white);">Container to Destination</h2>
+        <div class="accent-line center"></div>
+        <p>A streamlined 4-step flow that gets your cargo moving.</p>
       </div>
 
-      <!-- Four numbered steps with a connecting line -->
-      <div class="process-steps" role="list">
+      <div class="process-steps">
 
-        <!-- Step 1 -->
-        <div class="step" role="listitem">
-          <div class="step__number" aria-label="Step 1">1</div>
+        <div class="proc-step">
+          <div class="proc-step__circle">
+            <svg viewBox="0 0 24 24"><path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+          </div>
           <h4>Container Received</h4>
           <p>Your import container arrives at our adda facility</p>
         </div>
 
-        <!-- Step 2 -->
-        <div class="step" role="listitem">
-          <div class="step__number" aria-label="Step 2">2</div>
+        <div class="proc-step">
+          <div class="proc-step__circle">
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          </div>
           <h4>Cargo Unloaded</h4>
           <p>Goods carefully unloaded and sorted for dispatch</p>
         </div>
 
-        <!-- Step 3 -->
-        <div class="step" role="listitem">
-          <div class="step__number" aria-label="Step 3">3</div>
+        <div class="proc-step">
+          <div class="proc-step__circle">
+            <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          </div>
           <h4>Mode Selected</h4>
-          <p>Road, rail, air, or managed container — you choose</p>
+          <p>Road, rail, or air — we schedule the right transport</p>
         </div>
 
-        <!-- Step 4 -->
-        <div class="step" role="listitem">
-          <div class="step__number" aria-label="Step 4">4</div>
+        <div class="proc-step">
+          <div class="proc-step__circle">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          </div>
           <h4>Delivered</h4>
-          <p>Goods delivered to your factory or specified address</p>
+          <p>Goods arrive at your factory or specified address</p>
         </div>
 
       </div>
 
-      <!-- Link to full How It Works page -->
-      <div class="process-teaser__footer">
-        <a href="how-it-works.html" class="btn btn-primary">See Full Process</a>
+      <div class="process-teaser__cta">
+        <a href="how-it-works.html" class="btn btn-primary">
+          See Full Process
+          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </a>
       </div>
-    </div>
-  </section>
 
-
-  <!-- ============================================================
-       WHY CHOOSE US
-       Left: list of differentiating features.
-       Right: coloured accent blocks (visual element).
-  ============================================================ -->
-  <section class="why-us section-padding" aria-labelledby="why-heading">
-    <div class="container">
-      <div class="why-us__inner">
-
-        <!-- Left column: text and feature list -->
-        <div class="why-us__content">
-          <span class="section-label">Why Choose Us</span>
-          <h2 id="why-heading">Your Cargo, Our Commitment</h2>
-          <div class="heading-underline"></div>
-          <p>
-            We've built our operations around one goal: making the importer's
-            job easier. From the moment goods land to the final delivery,
-            we remove the complexity.
-          </p>
-
-          <!-- Feature checklist -->
-          <div class="why-us__features">
-
-            <div class="feature-item">
-              <div class="feature-item__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              </div>
-              <div class="feature-item__text">
-                <h5>Multi-Modal Transport</h5>
-                <p>Road, rail, and air options under one roof — no need to coordinate with multiple carriers.</p>
-              </div>
-            </div>
-
-            <div class="feature-item">
-              <div class="feature-item__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              </div>
-              <div class="feature-item__text">
-                <h5>Safe Cargo Handling</h5>
-                <p>Experienced teams follow strict protocols for unloading, sorting, and reloading goods.</p>
-              </div>
-            </div>
-
-            <div class="feature-item">
-              <div class="feature-item__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              </div>
-              <div class="feature-item__text">
-                <h5>Door-to-Door Service</h5>
-                <p>We deliver directly to your factory, warehouse, or any address — no middle steps.</p>
-              </div>
-            </div>
-
-            <div class="feature-item">
-              <div class="feature-item__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              </div>
-              <div class="feature-item__text">
-                <h5>Wide Product Range</h5>
-                <p>We serve importers dealing in all types of goods — machinery, raw materials, consumer products, and more.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Right column: decorative accent blocks -->
-        <div class="why-us__visual" aria-hidden="true">
-
-          <div class="why-us__block">
-            <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
-            <p>Road</p>
-          </div>
-
-          <div class="why-us__block">
-            <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
-            <p>Air</p>
-          </div>
-
-          <div class="why-us__block">
-            <svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2H18v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zm-5 5h4v3H7V7zm10 8.5c0 .83-.67 1.5-1.5 1.5h-7c-.83 0-1.5-.67-1.5-1.5V12h10v3.5zm0-5.5h-4V7h4v3z"/></svg>
-            <p>Rail</p>
-          </div>
-
-          <div class="why-us__block">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            <p>Door-to-Door</p>
-          </div>
-
-        </div>
-      </div>
     </div>
   </section>
 
 
   <!-- ============================================================
        CTA BANNER
-       Full-width orange strip prompting users to get in touch.
+       IMAGE: images/cta-bg.jpg → search "logistics industrial aerial"
   ============================================================ -->
-  <section class="cta-banner" aria-labelledby="cta-heading">
+  <section class="cta-banner">
     <div class="container">
       <div class="cta-banner__inner">
-        <h2 id="cta-heading">
-          Ready to Ship?<br>
-          <span>Let's Move Your Cargo.</span>
+
+        <h2>
+          <span>Ready to Ship?</span>
+          Let's Move Your Cargo Today.
         </h2>
-        <a href="contact.html" class="btn btn-secondary">Contact Us Today</a>
+
+        <a href="contact.html" class="btn btn-outline" style="flex-shrink:0;">
+          Contact Us Now
+          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </a>
+
       </div>
     </div>
   </section>
 
 
   <!-- ============================================================
-       FOOTER — Shared across all pages
-       Brand blurb, page links, services links, and contact info.
+       FOOTER
   ============================================================ -->
   <footer>
-    <div class="footer__top container">
+    <div class="container">
+      <div class="footer__top">
 
-      <!-- Brand column -->
-      <div class="footer__brand">
-        <div class="footer-logo">Buraq<span>Logistics</span></div>
-        <p>
-          Reliable freight and logistics solutions via road, rail, and air —
-          serving importers with complete door-to-door service.
-        </p>
-      </div>
-
-      <!-- Quick links -->
-      <div class="footer__col">
-        <h5>Company</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Services links -->
-      <div class="footer__col">
-        <h5>Services</h5>
-        <ul>
-          <li><a href="services.html#road">Road Transport</a></li>
-          <li><a href="services.html#railway">Railway Freight</a></li>
-          <li><a href="services.html#air">Air Freight</a></li>
-          <li><a href="services.html#container">Container Freight</a></li>
-          <li><a href="services.html#door-to-door">Door-to-Door</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact details -->
-      <div class="footer__col">
-        <h5>Contact</h5>
-
-        <div class="footer__contact-item">
-          <!-- Location icon -->
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span>123 Freight Road, Industrial Zone, Karachi</span>
+        <!-- Brand -->
+        <div class="footer__brand">
+          <div class="logo-text">Burraq<span>Logistics</span></div>
+          <div class="footer__brand-line"></div>
+          <p>Reliable freight and logistics solutions via road, rail, and air — serving importers across Pakistan with complete door-to-door service.</p>
         </div>
 
-        <div class="footer__contact-item">
-          <!-- Phone icon -->
-          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          <span>+92 300 000 0000</span>
+        <!-- Company links -->
+        <div class="footer__col">
+          <h6>Company</h6>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
 
-        <div class="footer__contact-item">
-          <!-- Email icon -->
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          <span>info@BuraqLogistics.com</span>
+        <!-- Services links -->
+        <div class="footer__col">
+          <h6>Services</h6>
+          <ul>
+            <li><a href="services.html#road">Road Transport</a></li>
+            <li><a href="services.html#railway">Railway Freight</a></li>
+            <li><a href="services.html#air">Air Freight</a></li>
+            <li><a href="services.html#container">Container Freight</a></li>
+            <li><a href="services.html#door-to-door">Door-to-Door</a></li>
+          </ul>
         </div>
+
+        <!-- Contact info -->
+        <div class="footer__col">
+          <h6>Contact</h6>
+          <div class="footer__contact-row">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>123 Freight Road, Industrial Zone, Karachi</span>
+          </div>
+          <div class="footer__contact-row">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>+92 300 000 0000</span>
+          </div>
+          <div class="footer__contact-row">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span>info@burraqlogistics.com</span>
+          </div>
+        </div>
+
       </div>
 
-    </div>
-
-    <!-- Footer bottom bar: copyright -->
-    <div class="footer__bottom container">
-      <span>&copy; <span class="footer-year">2025</span> BuraqLogistics Logistics. All rights reserved.</span>
-      <span>Freight &amp; Logistics Solutions</span>
+      <div class="footer__bottom">
+        <span>&copy; <span class="footer-year">2025</span> Burraq Logistics. All rights reserved.</span>
+        <span>Freight &amp; Transportation Solutions</span>
+      </div>
     </div>
   </footer>
 
-
-  <!-- ── JavaScript ── -->
-  <!-- main.js handles navbar toggle and active link highlighting -->
   <script src="js/main.js"></script>
-
 </body>
 </html>
