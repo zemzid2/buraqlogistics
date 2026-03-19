@@ -6,7 +6,7 @@
    IMAGE: images/hiw-hero.jpg → search "cargo loading ship port"
 ── */
 .page-hero.hiw-hero {
-  background-image: url('../images/hiw-hero.jpg');
+  background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956838/hiw-hero_lvfz88.avif');
   min-height: 420px;
   display: flex;
   align-items: center;

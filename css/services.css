@@ -7,7 +7,7 @@
    IMAGE: images/services-hero.jpg → search "shipping containers port aerial"
 ── */
 .page-hero.services-hero {
-  background-image: url('../images/services-hero.jpg');
+  background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956839/services-hero_mc9f8a.avif');
   min-height: 420px;
   display: flex;
   align-items: center;
@@ -306,12 +306,12 @@
    warehouse: images/warehouse.jpg
    door:      images/delivery.jpg
 ── */
-.svc-detail--road      .svc-img-block__photo { background-image: url('../images/road.jpg'); }
-.svc-detail--railway   .svc-img-block__photo { background-image: url('../images/railway.jpg'); }
-.svc-detail--air       .svc-img-block__photo { background-image: url('../images/air.jpg'); }
-.svc-detail--container .svc-img-block__photo { background-image: url('../images/container.jpg'); }
-.svc-detail--warehouse .svc-img-block__photo { background-image: url('../images/warehouse.jpg'); }
-.svc-detail--door      .svc-img-block__photo { background-image: url('../images/delivery.jpg'); }
+.svc-detail--road      .svc-img-block__photo { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956837/road_gcoqfw.avif'); }
+.svc-detail--railway   .svc-img-block__photo { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956836/railway_myvjze.avif'); }
+.svc-detail--air       .svc-img-block__photo { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956838/air_ftma9c.avif'); }
+.svc-detail--container .svc-img-block__photo { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956837/container_t21jjj.avif'); }
+.svc-detail--warehouse .svc-img-block__photo { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956839/warehouse_xoz5t5.avif'); }
+.svc-detail--door      .svc-img-block__photo { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956839/delivery_ufhu2t.avif'); }
 
 /* ── COMPARISON TABLE ── */
 .svc-comparison {

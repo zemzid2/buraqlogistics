@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   background-color: var(--navy);          /* fallback color */
-  background-image: url('../images/hero-bg.jpg');
+  background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956838/hero-bg_w3ppef.avif');
   background-size: cover;
   background-position: center 40%;
   background-attachment: fixed;           /* parallax effect */
@@ -406,12 +406,12 @@
    Warehouse:  images/warehouse.jpg  → search "warehouse interior forklift"
    Door:       images/delivery.jpg   → search "delivery truck city"
 ── */
-.svc-card--road      .svc-card__img { background-image: url('../images/road.jpg'); }
-.svc-card--railway   .svc-card__img { background-image: url('../images/railway.jpg'); }
-.svc-card--air       .svc-card__img { background-image: url('../images/air.jpg'); }
-.svc-card--container .svc-card__img { background-image: url('../images/container.jpg'); }
-.svc-card--warehouse .svc-card__img { background-image: url('../images/warehouse.jpg'); }
-.svc-card--door      .svc-card__img { background-image: url('../images/delivery.jpg'); }
+.svc-card--road      .svc-card__img { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956837/road_gcoqfw.avif'); }
+.svc-card--railway   .svc-card__img { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956836/railway_myvjze.avif'); }
+.svc-card--air       .svc-card__img { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956838/air_ftma9c.avif'); }
+.svc-card--container .svc-card__img { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956837/container_t21jjj.avif'); }
+.svc-card--warehouse .svc-card__img { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956839/warehouse_xoz5t5.avif'); }
+.svc-card--door      .svc-card__img { background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956839/delivery_ufhu2t.avif'); }
 
 /* ── ABOUT TEASER ──
    Split section: left is large image, right is text + features
@@ -438,7 +438,7 @@
   position: relative;
   min-height: 560px;
   background-color: var(--navy-mid);
-  background-image: url('../images/about-teaser.jpg');
+  background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956838/about-teaser_lvy4x9.avif');
   background-size: cover;
   background-position: center;
 }
@@ -725,7 +725,7 @@
 .cta-banner {
   position: relative;
   background-color: var(--navy);
-  background-image: url('../images/cta-bg.jpg');
+  background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956837/cta-bg_lx6rem.avif');
   background-size: cover;
   background-position: center;
   padding: 96px 0;

@@ -7,7 +7,7 @@
    IMAGE: images/about-hero.jpg → search "warehouse logistics aerial"
 ── */
 .page-hero.about-hero {
-  background-image: url('../images/about-hero.jpg');
+  background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956837/about-hero_ylbat6.avif');
   min-height: 420px;
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@
   height: 520px;
   border-radius: var(--r-lg);
   background-color: var(--navy-mid);
-  background-image: url('../images/about-story.jpg');
+  background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956838/about-story_v6yzyf.avif');
   background-size: cover;
   background-position: center;
   box-shadow: var(--shadow-xl);
@@ -255,7 +255,7 @@
 .facility-section {
   position: relative;
   background-color: var(--navy);
-  background-image: url('../images/facility.jpg');
+  background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956838/facility_lkhtlr.avif');
   background-size: cover;
   background-position: center;
   padding: 100px 0;

@@ -6,7 +6,7 @@
    IMAGE: images/contact-hero.jpg → search "logistics office professional"
 ── */
 .page-hero.contact-hero {
-  background-image: url('../images/contact-hero.jpg');
+  background-image: url('https://res.cloudinary.com/dwaxgussx/image/upload/v1773956838/contact-hero_jllhvi.avif');
   min-height: 380px;
   display: flex;
   align-items: center;
