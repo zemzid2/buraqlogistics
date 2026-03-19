@@ -1,0 +1,554 @@
+/* ============================================================
+   index.css — Styles specific to the Home page (index.html)
+   Covers: hero, stats bar, service cards, process teaser,
+   why-us section, and CTA banner
+   ============================================================ */
+
+/* ── HERO SECTION ── */
+.hero {
+  background-color: var(--color-navy);
+  /* Diagonal split: navy left, textured right */
+  background-image:
+    linear-gradient(105deg, var(--color-navy) 58%, var(--color-navy-light) 58%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative stripe lines in the background */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 42%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 12px,
+    rgba(255,255,255,0.025) 12px,
+    rgba(255,255,255,0.025) 14px
+  );
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Left column: text content */
+.hero__content .section-label {
+  margin-bottom: 16px;
+}
+
+.hero__content h1 {
+  color: var(--color-white);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero__content h1 em {
+  font-style: normal;
+  color: var(--color-orange);
+}
+
+.hero__content p {
+  color: var(--color-gray-300);
+  font-size: 1.1rem;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+/* Side-by-side buttons */
+.hero__buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Right column: visual card */
+.hero__visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Individual stat/mode cards inside the hero visual */
+.hero__card {
+  background-color: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius-md);
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.hero__card:first-child {
+  grid-column: span 2;
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.hero__card svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--color-orange);
+  margin-bottom: 12px;
+}
+
+.hero__card:first-child svg {
+  fill: var(--color-white);
+}
+
+.hero__card h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.hero__card p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+.hero__card:first-child p {
+  color: rgba(255,255,255,0.85);
+}
+
+/* ── STATS BAR ── */
+/* Full-width strip with key numbers */
+.stats-bar {
+  background-color: var(--color-black);
+  padding: 36px 0;
+}
+
+.stats-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  divide-x: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 16px 24px;
+  border-right: 1px solid rgba(255,255,255,0.10);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-item__number {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-item__label {
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* ── SERVICES OVERVIEW SECTION ── */
+.services-overview {
+  background-color: var(--color-cream);
+}
+
+.services-overview__header {
+  max-width: 560px;
+  margin-bottom: 56px;
+}
+
+/* Grid of service cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Individual service card */
+.service-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  border-bottom: 4px solid transparent;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.service-card:hover {
+  border-bottom-color: var(--color-orange);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+/* Icon circle at top of card */
+.service-card__icon {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(232, 93, 4, 0.10);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.service-card__icon svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--color-orange);
+}
+
+.service-card h3 {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  transition: gap 0.2s ease;
+}
+
+.service-card__link:hover {
+  gap: 10px;
+}
+
+.service-card__link svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--color-orange);
+}
+
+/* ── HOW IT WORKS TEASER (shortened version for homepage) ── */
+.process-teaser {
+  background-color: var(--color-navy);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle diagonal texture in background */
+.process-teaser::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    transparent,
+    transparent 30px,
+    rgba(255,255,255,0.015) 30px,
+    rgba(255,255,255,0.015) 32px
+  );
+  pointer-events: none;
+}
+
+.process-teaser .container {
+  position: relative;
+  z-index: 1;
+}
+
+.process-teaser__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 56px;
+}
+
+/* Horizontal step cards with connecting line */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+/* The connecting line between steps */
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-orange), rgba(232,93,4,0.3));
+  z-index: 0;
+}
+
+/* Single step */
+.step {
+  text-align: center;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Step number circle */
+.step__number {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--color-navy-light);
+  border: 3px solid var(--color-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+.step h4 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+  line-height: 1.5;
+}
+
+.process-teaser__footer {
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* ── WHY CHOOSE US ── */
+.why-us {
+  background-color: var(--color-gray-100);
+}
+
+.why-us__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Left side: text content */
+.why-us__content h2 {
+  margin-bottom: 8px;
+}
+
+.why-us__content > p {
+  font-size: 1.05rem;
+  margin-bottom: 36px;
+}
+
+/* Feature list items */
+.why-us__features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Orange check icon */
+.feature-item__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature-item__icon svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-white);
+}
+
+.feature-item__text h5 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.feature-item__text p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Right side: visual blocks */
+.why-us__visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Visual accent blocks */
+.why-us__block {
+  background-color: var(--color-navy);
+  border-radius: var(--radius-md);
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.why-us__block:nth-child(2) {
+  background-color: var(--color-orange);
+  margin-top: 24px;
+}
+
+.why-us__block:nth-child(3) {
+  background-color: var(--color-orange);
+  margin-top: -24px;
+}
+
+.why-us__block:nth-child(4) {
+  background-color: var(--color-navy);
+}
+
+.why-us__block svg {
+  width: 44px;
+  height: 44px;
+  fill: rgba(255,255,255,0.85);
+  margin-bottom: 12px;
+}
+
+.why-us__block p {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background-color: var(--color-orange);
+  padding: 72px 0;
+}
+
+.cta-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.cta-banner h2 {
+  color: var(--color-white);
+  max-width: 560px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.cta-banner h2 span {
+  color: var(--color-navy);
+}
+
+/* ── HOME PAGE RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero__visual {
+    max-width: 520px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .process-steps::before {
+    display: none;
+  }
+
+  .why-us__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .stats-bar__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat-item:nth-child(3) {
+    border-right: 1px solid rgba(255,255,255,0.10);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 64px 0 56px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cta-banner__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .why-us__visual {
+    display: none; /* hide on small screens to save space */
+  }
+
+  .stats-bar__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

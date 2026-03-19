@@ -1,0 +1,385 @@
+/* ============================================================
+   contact.css — Styles specific to the Contact page
+   Covers: contact info cards, inquiry form, map embed area,
+   and office hours panel
+   ============================================================ */
+
+/* ── CONTACT LAYOUT ── */
+/* Main content: form left, info right */
+.contact-main {
+  background-color: var(--color-cream);
+  padding: 88px 0;
+}
+
+.contact-main__inner {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+/* ── INQUIRY FORM ── */
+.contact-form-wrap {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 48px 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-form-wrap h2 {
+  margin-bottom: 8px;
+  font-size: 1.9rem;
+  text-transform: uppercase;
+}
+
+.contact-form-wrap > p {
+  color: var(--color-gray-500);
+  font-size: 0.95rem;
+  margin-bottom: 36px;
+}
+
+/* The form itself */
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Row that holds two fields side by side */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Single form field group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Field label */
+.form-group label {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-gray-700);
+}
+
+/* Required asterisk */
+.form-group label .required {
+  color: var(--color-orange);
+  margin-left: 3px;
+}
+
+/* Input, select, and textarea shared styles */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-black);
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-orange);
+  background-color: var(--color-white);
+}
+
+/* Placeholder styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-gray-300);
+}
+
+/* Select dropdown arrow */
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%238a8279'%3E%3Cpath d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* Textarea-specific sizing */
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* Validation error message */
+.form-error {
+  font-size: 0.8rem;
+  color: #dc2626;
+  display: none;
+}
+
+.form-group.error .form-error {
+  display: block;
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+  border-color: #dc2626;
+}
+
+/* Submit button — full width inside the form */
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+
+/* Success message shown after form submission */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.form-success.visible {
+  display: block;
+}
+
+.form-success__icon {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(74, 222, 128, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.form-success__icon svg {
+  width: 32px;
+  height: 32px;
+  fill: #4ade80;
+}
+
+.form-success h3 {
+  color: var(--color-navy);
+  margin-bottom: 10px;
+}
+
+.form-success p {
+  color: var(--color-gray-500);
+  font-size: 0.95rem;
+}
+
+/* ── CONTACT INFO SIDEBAR ── */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual contact info card */
+.info-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Icon box */
+.info-card__icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-navy);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-card__icon svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--color-orange);
+}
+
+.info-card__text h5 {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+  margin-bottom: 6px;
+}
+
+.info-card__text p,
+.info-card__text a {
+  font-size: 0.95rem;
+  color: var(--color-navy);
+  line-height: 1.6;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.info-card__text a:hover {
+  color: var(--color-orange);
+}
+
+/* ── OFFICE HOURS TABLE ── */
+.office-hours {
+  background-color: var(--color-navy);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.office-hours h5 {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  margin-bottom: 16px;
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hours-table tr {
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.hours-table tr:last-child {
+  border-bottom: none;
+}
+
+.hours-table td {
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
+
+.hours-table td:first-child {
+  color: var(--color-gray-300);
+}
+
+.hours-table td:last-child {
+  text-align: right;
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+/* Closed day text */
+.hours-closed {
+  color: var(--color-gray-500) !important;
+  font-weight: 400 !important;
+}
+
+/* ── MAP SECTION ── */
+.contact-map {
+  background-color: var(--color-gray-100);
+  padding: 88px 0;
+}
+
+.contact-map__header {
+  margin-bottom: 40px;
+}
+
+.contact-map__header h2 {
+  text-transform: uppercase;
+}
+
+/* Map container placeholder (replace with actual embed) */
+.map-embed {
+  width: 100%;
+  height: 440px;
+  background-color: var(--color-navy-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  border: 2px solid var(--color-gray-300);
+}
+
+/* The actual iframe inside */
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Placeholder shown when no iframe is added */
+.map-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 24px;
+}
+
+.map-placeholder svg {
+  width: 56px;
+  height: 56px;
+  fill: var(--color-orange);
+  opacity: 0.6;
+}
+
+.map-placeholder p {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+}
+
+/* ── CONTACT PAGE RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .contact-main__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-form-wrap {
+    padding: 32px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-map {
+    padding: 64px 0;
+  }
+
+  .map-embed {
+    height: 300px;
+  }
+}

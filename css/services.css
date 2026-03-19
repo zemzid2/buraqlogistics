@@ -1,0 +1,376 @@
+/* ============================================================
+   services.css — Styles specific to the Services page
+   Covers: services navigation tabs, individual service
+   detail blocks, and a comparison table
+   ============================================================ */
+
+/* ── SERVICES NAVIGATION BAR ── */
+/* Sticky tab-style nav to jump between services */
+.services-nav {
+  background-color: var(--color-white);
+  border-bottom: 2px solid var(--color-gray-100);
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 100;
+}
+
+.services-nav__inner {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  /* Hide scrollbar but keep functionality */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.services-nav__inner::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each nav tab */
+.services-nav__tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 24px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  text-decoration: none;
+}
+
+.services-nav__tab svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.services-nav__tab:hover,
+.services-nav__tab.active {
+  color: var(--color-orange);
+  border-bottom-color: var(--color-orange);
+}
+
+/* ── SERVICE DETAIL BLOCK ── */
+/* Alternating layout: text left + visual right, then right + left */
+.service-detail {
+  padding: 96px 0;
+}
+
+/* Odd-numbered services get cream background, even get white */
+.service-detail:nth-child(odd) {
+  background-color: var(--color-cream);
+}
+
+.service-detail:nth-child(even) {
+  background-color: var(--color-white);
+}
+
+.service-detail__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* Reverse layout for even-numbered services */
+.service-detail:nth-child(even) .service-detail__inner {
+  direction: rtl;
+}
+
+.service-detail:nth-child(even) .service-detail__content,
+.service-detail:nth-child(even) .service-detail__visual {
+  direction: ltr;
+}
+
+/* Service text content */
+.service-detail__content .section-label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.service-detail__content h2 {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.service-detail__content > p {
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+
+/* Bullet list of what the service includes */
+.service-detail__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.service-detail__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--color-gray-700);
+}
+
+/* Orange bullet dot */
+.service-detail__list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-orange);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+/* Visual side of service detail: icon + stats cards */
+.service-detail__visual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Large icon banner at top of visual column */
+.service-visual__banner {
+  background-color: var(--color-navy);
+  border-radius: var(--radius-md);
+  padding: 56px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative circle in background of banner */
+.service-visual__banner::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgba(232, 93, 4, 0.15);
+}
+
+.service-visual__banner svg {
+  width: 72px;
+  height: 72px;
+  fill: var(--color-orange);
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-visual__banner h3 {
+  color: var(--color-white);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Small fact cards below the banner */
+.service-visual__facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.fact-card {
+  background-color: var(--color-gray-100);
+  border-radius: var(--radius-sm);
+  padding: 20px 16px;
+  text-align: center;
+  border-bottom: 3px solid var(--color-orange);
+}
+
+.fact-card__value {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.fact-card__label {
+  font-size: 0.8rem;
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* ── SERVICE PROCESS MINI-STEPS ── */
+/* Compact step list inside service detail */
+.service-process {
+  margin-top: 8px;
+}
+
+.service-process h5 {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+  margin-bottom: 16px;
+}
+
+.service-process__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sp-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Small numbered badge */
+.sp-step__num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sp-step p {
+  font-size: 0.9rem;
+  color: var(--color-gray-700);
+  margin: 0;
+}
+
+/* ── SERVICES COMPARISON TABLE ── */
+.services-comparison {
+  background-color: var(--color-navy);
+  padding: 88px 0;
+}
+
+.services-comparison__header {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 56px;
+}
+
+.services-comparison__header h2 {
+  color: var(--color-white);
+}
+
+.services-comparison__header p {
+  color: var(--color-gray-300);
+}
+
+/* The comparison table itself */
+.comparison-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-navy-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.comparison-table thead th {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 18px 20px;
+  text-align: left;
+}
+
+.comparison-table thead th:first-child {
+  background-color: var(--color-black);
+}
+
+.comparison-table tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.comparison-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.comparison-table tbody tr:hover {
+  background-color: rgba(255,255,255,0.04);
+}
+
+.comparison-table tbody td {
+  padding: 16px 20px;
+  font-size: 0.9rem;
+  color: var(--color-gray-300);
+}
+
+/* Row label (first column) */
+.comparison-table tbody td:first-child {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background-color: rgba(0,0,0,0.15);
+}
+
+/* Checkmark and X symbols in table */
+.table-check {
+  color: #4ade80;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.table-cross {
+  color: var(--color-gray-500);
+  font-size: 1rem;
+}
+
+/* ── SERVICES PAGE RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .service-detail__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .service-detail:nth-child(even) .service-detail__inner {
+    direction: ltr;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-detail {
+    padding: 64px 0;
+  }
+
+  .services-nav__tab {
+    padding: 14px 16px;
+    font-size: 0.78rem;
+  }
+}
