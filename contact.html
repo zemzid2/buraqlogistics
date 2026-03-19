@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact BuraqLogistics for freight inquiries, quotes, and shipment questions. Call, email, or fill out our inquiry form." />
-  <title>Contact Us — BuraqLogistics Logistics</title>
+  <meta name="description" content="Contact SwiftCargo for freight inquiries, quotes, and shipment questions. Call, email, or fill out our inquiry form." />
+  <title>Contact Us — SwiftCargo Logistics</title>
 
   <!-- Global shared styles -->
   <link rel="stylesheet" href="css/global.css" />
@@ -18,13 +18,13 @@
   ============================================================ -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container">
-      <a href="index.html" class="navbar__logo" aria-label="BuraqLogistics Home">
+      <a href="index.html" class="navbar__logo" aria-label="SwiftCargo Home">
         <div class="navbar__logo-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/>
           </svg>
         </div>
-        <span class="navbar__logo-text">Buraq<span>Logistics</span></span>
+        <span class="navbar__logo-text">Swift<span>Cargo</span></span>
       </a>
       <ul class="navbar__links" role="list">
         <li><a href="index.html">Home</a></li>
@@ -60,7 +60,7 @@
         <span aria-current="page">Contact</span>
       </nav>
       <span class="section-label">Get In Touch</span>
-      <h1>Contact BuraqLogistics</h1>
+      <h1>Contact SwiftCargo</h1>
       <p>
         Have a shipment in mind? Need a quote? Fill out the form below
         or reach us directly — we respond quickly.
@@ -95,7 +95,17 @@
           </div>
 
           <!-- The inquiry form — form.js handles validation and submission -->
-          <form class="inquiry-form" novalidate aria-label="Freight inquiry form">
+          <!-- Web3Forms: action points to their API, access_key hidden field authenticates the submission -->
+          <form class="inquiry-form" novalidate aria-label="Freight inquiry form" action="https://api.web3forms.com/submit" method="POST">
+
+            <!-- Web3Forms access key — required for every submission -->
+            <input type="hidden" name="access_key" value="1007286b-99d3-440d-91c3-d6b7ca450d60" />
+
+            <!-- Subject line that appears in your inbox -->
+            <input type="hidden" name="subject" value="New Freight Inquiry — SwiftCargo Website" />
+
+            <!-- Redirect back to the same page after submission (Web3Forms default redirect disabled) -->
+            <input type="hidden" name="redirect" value="false" />
 
             <!-- Row 1: Full name + Company name -->
             <div class="form-row">
@@ -255,7 +265,7 @@
             </div>
             <div class="info-card__text">
               <h5>Email Us</h5>
-              <a href="mailto:info@BuraqLogistics.com">info@BuraqLogistics.com</a>
+              <a href="/cdn-cgi/l/email-protection#640d0a020b2417130d0210070516030b4a070b09"><span class="__cf_email__" data-cfemail="cca5a2aaa38cbfbba5aab8afadbeaba3e2afa3a1">[email&#160;protected]</span></a>
             </div>
           </div>
 
@@ -348,7 +358,7 @@
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="BuraqLogistics facility location on Google Maps"
+            title="SwiftCargo facility location on Google Maps"
           ></iframe>
         -->
 
@@ -363,7 +373,7 @@
   <footer>
     <div class="footer__top container">
       <div class="footer__brand">
-        <div class="footer-logo">Buraq<span>Logistics</span></div>
+        <div class="footer-logo">Swift<span>Cargo</span></div>
         <p>Reliable freight and logistics solutions via road, rail, and air — serving importers with complete door-to-door service.</p>
       </div>
       <div class="footer__col">
@@ -398,19 +408,10 @@
         </div>
         <div class="footer__contact-item">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          <span>info@BuraqLogistics.com</span>
+          <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6900070f06291a1e000f1d0a081b0e06470a0604">[email&#160;protected]</a></span>
         </div>
       </div>
     </div>
     <div class="footer__bottom container">
-      <span>&copy; <span class="footer-year">2025</span> BuraqLogistics Logistics. All rights reserved.</span>
-      <span>Freight &amp; Logistics Solutions</span>
-    </div>
-  </footer>
-
-  <!-- main.js: navbar toggle + active link detection -->
-  <!-- form.js: form validation, submission handler, FAQ accordions -->
-  <script src="js/main.js"></script>
-  <script src="js/form.js"></script>
-</body>
-</html>
+      <span>&copy; <span class="footer-year">2025</span> SwiftCargo Logistics. All rights reserved.</span>
+      <span>Freight &amp; Logistics Solu
