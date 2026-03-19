@@ -6,415 +6,117 @@
   <meta name="description" content="Contact BuraqLogistics for freight inquiries, quotes, and shipment questions. Call, email, or fill out our inquiry form." />
   <title>Contact Us — BuraqLogistics Logistics</title>
 
-  <!-- Global shared styles -->
   <link rel="stylesheet" href="css/global.css" />
-  <!-- Page-specific styles -->
   <link rel="stylesheet" href="css/contact.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       NAVBAR
-  ============================================================ -->
+  <!-- NAVBAR -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container">
-      <a href="index.html" class="navbar__logo" aria-label="BuraqLogistics Home">
+      <a href="index.html" class="navbar__logo">
         <div class="navbar__logo-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
             <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/>
           </svg>
         </div>
         <span class="navbar__logo-text">Buraq<span>Logistics</span></span>
       </a>
-      <ul class="navbar__links" role="list">
+
+      <ul class="navbar__links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="how-it-works.html">How It Works</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
+
       <a href="contact.html" class="navbar__cta">Get a Quote</a>
-      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
+
+      <button class="navbar__hamburger">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <nav class="navbar__mobile-menu" aria-label="Mobile navigation">
+
+    <!-- FIXED: changed nav → div -->
+    <div class="navbar__mobile-menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="how-it-works.html">How It Works</a>
       <a href="contact.html">Contact</a>
-      <a href="contact.html" style="color: var(--color-orange); margin-top: 8px;">Get a Quote →</a>
-    </nav>
+    </div>
   </nav>
 
 
-  <!-- ============================================================
-       PAGE HERO BANNER
-  ============================================================ -->
-  <header class="page-hero" role="banner">
+  <!-- HERO -->
+  <header class="page-hero">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span aria-hidden="true">›</span>
-        <span aria-current="page">Contact</span>
-      </nav>
-      <span class="section-label">Get In Touch</span>
       <h1>Contact BuraqLogistics</h1>
-      <p>
-        Have a shipment in mind? Need a quote? Fill out the form below
-        or reach us directly — we respond quickly.
-      </p>
+      <p>Reach out to us for freight services and inquiries.</p>
     </div>
   </header>
 
 
-  <!-- ============================================================
-       CONTACT MAIN
-       Two-column layout:
-       - Left: inquiry form
-       - Right: contact info cards + office hours
-  ============================================================ -->
-  <section class="contact-main" aria-labelledby="contact-form-heading">
+  <!-- CONTACT -->
+  <section class="contact-main">
     <div class="container">
-      <div class="contact-main__inner">
 
-        <!-- ── LEFT COLUMN: INQUIRY FORM ── -->
-        <div class="contact-form-wrap">
-          <h2 id="contact-form-heading">Send Us an Inquiry</h2>
-          <p>Fill in your details and a brief description of your freight needs. We'll get back to you within one business day.</p>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="1007286b-99d3-440d-91c3-d6b7ca450d60" />
 
-          <!-- Success message — hidden until form is submitted successfully -->
-          <div class="form-success" role="alert" aria-live="polite">
-            <div class="form-success__icon" aria-hidden="true">
-              <!-- Checkmark icon -->
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-            </div>
-            <h3>Inquiry Received!</h3>
-            <p>Thank you for reaching out. Our team will contact you within one business day to discuss your freight requirements.</p>
-          </div>
+        <input type="text" name="full_name" placeholder="Full Name" required />
+        <input type="text" name="company" placeholder="Company Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="phone" placeholder="Phone" required />
 
-          <!-- The inquiry form — form.js handles validation and submission -->
-          <!-- Web3Forms: action points to their API, access_key hidden field authenticates the submission -->
-          <form class="inquiry-form" novalidate aria-label="Freight inquiry form" action="https://api.web3forms.com/submit" method="POST">
+        <select name="service_type" required>
+          <option value="">Select Service</option>
+          <option value="road">Road</option>
+          <option value="railway">Railway</option>
+          <option value="air">Air</option>
+        </select>
 
-            <!-- Web3Forms access key — required for every submission -->
-            <input type="hidden" name="access_key" value="1007286b-99d3-440d-91c3-d6b7ca450d60" />
+        <input type="text" name="cargo_type" placeholder="Cargo Description" required />
+        <textarea name="message" placeholder="Message"></textarea>
 
-            <!-- Subject line that appears in your inbox -->
-            <input type="hidden" name="subject" value="New Freight Inquiry — BuraqLogistics Website" />
+        <button type="submit">Send Inquiry</button>
+      </form>
 
-            <!-- Redirect back to the same page after submission (Web3Forms default redirect disabled) -->
-            <input type="hidden" name="redirect" value="false" />
-
-            <!-- Row 1: Full name + Company name -->
-            <div class="form-row">
-
-              <div class="form-group">
-                <label for="full_name">
-                  Full Name <span class="required" aria-hidden="true">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="full_name"
-                  name="full_name"
-                  placeholder="e.g. Ahmed Khan"
-                  required
-                  autocomplete="name"
-                />
-                <!-- Error message shown by form.js on validation failure -->
-                <span class="form-error" role="alert"></span>
-              </div>
-
-              <div class="form-group">
-                <label for="company">
-                  Company Name <span class="required" aria-hidden="true">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  placeholder="e.g. Al Madina Traders"
-                  required
-                  autocomplete="organization"
-                />
-                <span class="form-error" role="alert"></span>
-              </div>
-
-            </div>
-
-            <!-- Row 2: Email + Phone -->
-            <div class="form-row">
-
-              <div class="form-group">
-                <label for="email">
-                  Email Address <span class="required" aria-hidden="true">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="you@company.com"
-                  required
-                  autocomplete="email"
-                />
-                <span class="form-error" role="alert"></span>
-              </div>
-
-              <div class="form-group">
-                <label for="phone">
-                  Phone Number <span class="required" aria-hidden="true">*</span>
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="+92 300 000 0000"
-                  required
-                  autocomplete="tel"
-                />
-                <span class="form-error" role="alert"></span>
-              </div>
-
-            </div>
-
-            <!-- Service type dropdown -->
-            <div class="form-group">
-              <label for="service_type">
-                Service Required <span class="required" aria-hidden="true">*</span>
-              </label>
-              <select id="service_type" name="service_type" required>
-                <option value="" disabled selected>Select a service…</option>
-                <option value="road">Road Transport</option>
-                <option value="railway">Railway Freight</option>
-                <option value="air">Air Freight</option>
-                <option value="container">Container Freight Service</option>
-                <option value="door_to_door">Door-to-Door Delivery</option>
-                <option value="not_sure">Not Sure — Advise Me</option>
-              </select>
-              <span class="form-error" role="alert"></span>
-            </div>
-
-            <!-- Cargo description -->
-            <div class="form-group">
-              <label for="cargo_type">
-                Cargo Description <span class="required" aria-hidden="true">*</span>
-              </label>
-              <input
-                type="text"
-                id="cargo_type"
-                name="cargo_type"
-                placeholder="e.g. Textiles, Machinery, Consumer Goods"
-                required
-              />
-              <span class="form-error" role="alert"></span>
-            </div>
-
-            <!-- Destination (optional) -->
-            <div class="form-group">
-              <label for="destination">Destination / Delivery Address</label>
-              <input
-                type="text"
-                id="destination"
-                name="destination"
-                placeholder="e.g. Lahore, Factory Address, etc."
-              />
-              <!-- No error span — this field is optional -->
-            </div>
-
-            <!-- Additional message (optional) -->
-            <div class="form-group">
-              <label for="message">Additional Notes</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                placeholder="Any other details about your shipment, timeline, or special requirements…"
-              ></textarea>
-            </div>
-
-            <!-- Submit button — full width, primary style -->
-            <button type="submit" class="btn btn-primary form-submit">
-              Send Inquiry
-            </button>
-
-          </form>
-        </div><!-- end .contact-form-wrap -->
-
-
-        <!-- ── RIGHT COLUMN: CONTACT INFO + HOURS ── -->
-        <div class="contact-info">
-
-          <!-- Phone card -->
-          <div class="info-card">
-            <div class="info-card__icon" aria-hidden="true">
-              <!-- Phone icon -->
-              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            </div>
-            <div class="info-card__text">
-              <h5>Call Us</h5>
-              <a href="tel:+923000000000">+92 300 000 0000</a>
-            </div>
-          </div>
-
-          <!-- Email card -->
-          <div class="info-card">
-            <div class="info-card__icon" aria-hidden="true">
-              <!-- Email icon -->
-              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </div>
-            <div class="info-card__text">
-              <h5>Email Us</h5>
-              <a href="/cdn-cgi/l/email-protection#640d0a020b2417130d0210070516030b4a070b09"><span class="__cf_email__" data-cfemail="cca5a2aaa38cbfbba5aab8afadbeaba3e2afa3a1">[email&#160;protected]</span></a>
-            </div>
-          </div>
-
-          <!-- Address card -->
-          <div class="info-card">
-            <div class="info-card__icon" aria-hidden="true">
-              <!-- Location pin icon -->
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            </div>
-            <div class="info-card__text">
-              <h5>Our Adda (Facility)</h5>
-              <p>123 Freight Road, Industrial Zone,<br>Karachi, Pakistan</p>
-            </div>
-          </div>
-
-          <!-- Office hours panel — dark navy background -->
-          <div class="office-hours">
-            <h5>Office Hours</h5>
-            <table class="hours-table" aria-label="Office hours">
-              <tbody>
-                <tr>
-                  <td>Monday – Thursday</td>
-                  <td>8:00 AM – 6:00 PM</td>
-                </tr>
-                <tr>
-                  <td>Friday</td>
-                  <td>8:00 AM – 1:00 PM</td>
-                </tr>
-                <tr>
-                  <td>Saturday</td>
-                  <td>9:00 AM – 3:00 PM</td>
-                </tr>
-                <tr>
-                  <td>Sunday</td>
-                  <!-- Closed styling applied via .hours-closed class -->
-                  <td class="hours-closed">Closed</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-        </div><!-- end .contact-info -->
-
-      </div>
     </div>
   </section>
 
 
-  <!-- ============================================================
-       MAP SECTION
-       Embeds a Google Map showing the facility location.
-       Replace the iframe src with your actual Google Maps embed URL.
-  ============================================================ -->
-  <section class="contact-map" aria-labelledby="map-heading">
+  <!-- MAP SECTION -->
+  <section class="contact-map">
     <div class="container">
 
-      <div class="contact-map__header">
-        <span class="section-label">Find Us</span>
-        <h2 id="map-heading">Our Location</h2>
-        <div class="heading-underline"></div>
-        <p>Visit our facility or use this map to plan your container drop-off.</p>
-      </div>
+      <h2>Our Location</h2>
 
-      <!-- Map embed container -->
-      <div class="map-embed" role="region" aria-label="Google Maps location">
+      <div class="map-embed">
 
-        <!--
-          TO ADD THE REAL MAP:
-          1. Go to Google Maps and search your facility address
-          2. Click Share → Embed a map
-          3. Copy the <iframe> code and replace the placeholder below
-          4. Delete the .map-placeholder div
-        -->
-
-        <!-- Placeholder shown until a real iframe is added -->
-        
-
-        <!--
-          EXAMPLE: Uncomment and replace src when ready
-          <iframe
-            src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="BuraqLogistics facility location on Google Maps"
-          ></iframe>
-        -->
-
+        <!-- ✅ WORKING GOOGLE MAP -->
         <iframe
-        src="https://www.google.com/maps?q=24.8501779,67.0096958&output=embed"
-        width="600"
-        height="450"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Buraq Logistics facility location on Google Maps">
+          src="https://www.google.com/maps?q=24.8501779,67.0096958&output=embed"
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy">
         </iframe>
 
       </div>
+
     </div>
   </section>
 
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
+  <!-- FOOTER -->
   <footer>
-    <div class="footer__top container">
-      <div class="footer__brand">
-        <div class="footer-logo">Buraq<span>Logistics</span></div>
-        <p>Reliable freight and logistics solutions via road, rail, and air — serving importers with complete door-to-door service.</p>
-      </div>
-      <div class="footer__col">
-        <h5>Company</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h5>Services</h5>
-        <ul>
-          <li><a href="services.html#road">Road Transport</a></li>
-          <li><a href="services.html#railway">Railway Freight</a></li>
-          <li><a href="services.html#air">Air Freight</a></li>
-          <li><a href="services.html#container">Container Freight</a></li>
-          <li><a href="services.html#door-to-door">Door-to-Door</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h5>Contact</h5>
-        <div class="footer__contact-item">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span>123 Freight Road, Industrial Zone, Karachi</span>
-        </div>
-        <div class="footer__contact-item">
-          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          <span>+92 300 000 0000</span>
-        </div>
-        <div class="footer__contact-item">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6900070f06291a1e000f1d0a081b0e06470a0604">[email&#160;protected]</a></span>
-        </div>
-      </div>
+    <div class="container">
+      <p>&copy; 2025 BuraqLogistics Logistics</p>
     </div>
-    <div class="footer__bottom container">
-      <span>&copy; <span class="footer-year">2025</span> BuraqLogistics Logistics. All rights reserved.</span>
-      <span>Freight &amp; Logistics Solu
+  </footer>
+
+</body>
+</html>
