@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore our full range of freight services: road transport, railway freight, air freight, container freight, and door-to-door delivery." />
+  <title>Our Services — SwiftCargo Logistics</title>
+
+  <!-- Global shared styles -->
+  <link rel="stylesheet" href="css/global.css" />
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="css/services.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar__logo" aria-label="SwiftCargo Home">
+        <div class="navbar__logo-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/>
+          </svg>
+        </div>
+        <span class="navbar__logo-text">Swift<span>Cargo</span></span>
+      </a>
+      <ul class="navbar__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="navbar__cta">Get a Quote</a>
+      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="navbar__mobile-menu" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" style="color: var(--color-orange); margin-top: 8px;">Get a Quote →</a>
+    </nav>
+  </nav>
+
+
+  <!-- ============================================================
+       PAGE HERO BANNER
+  ============================================================ -->
+  <header class="page-hero" role="banner">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Services</span>
+      </nav>
+      <span class="section-label">What We Do</span>
+      <h1>Our Freight Services</h1>
+      <p>
+        Complete freight and logistics solutions tailored for importers —
+        from container receipt to final delivery.
+      </p>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       SERVICES STICKY NAV
+       Tab-style navigation that lets users jump directly to any
+       service section without scrolling.
+  ============================================================ -->
+  <nav class="services-nav" aria-label="Jump to service">
+    <div class="container">
+      <div class="services-nav__inner">
+
+        <a href="#road" class="services-nav__tab">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+          Road Transport
+        </a>
+
+        <a href="#railway" class="services-nav__tab">
+          <svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2H18v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zm-5 5h4v3H7V7zm10 8.5c0 .83-.67 1.5-1.5 1.5h-7c-.83 0-1.5-.67-1.5-1.5V12h10v3.5zm0-5.5h-4V7h4v3z"/></svg>
+          Railway Freight
+        </a>
+
+        <a href="#air" class="services-nav__tab">
+          <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+          Air Freight
+        </a>
+
+        <a href="#container" class="services-nav__tab">
+          <svg viewBox="0 0 24 24"><path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H4V8h4v4h2V8h4v4h2V8h4v8z"/></svg>
+          Container Freight
+        </a>
+
+        <a href="#warehouse" class="services-nav__tab">
+          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          Warehouse &amp; Adda
+        </a>
+
+        <a href="#door-to-door" class="services-nav__tab">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Door-to-Door
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       SERVICE 1: ROAD TRANSPORT
+       Odd-numbered — text on left, visual on right.
+  ============================================================ -->
+  <section class="service-detail" id="road" aria-labelledby="road-heading">
+    <div class="container">
+      <div class="service-detail__inner">
+
+        <!-- Text content -->
+        <div class="service-detail__content">
+          <span class="section-label">Service 01</span>
+          <h2 id="road-heading">Road Transport</h2>
+          <div class="heading-underline"></div>
+
+          <p>
+            Our road transport service is the backbone of our logistics operation.
+            Once cargo is unloaded and sorted at our adda, our fleet of trucks
+            picks it up and moves it efficiently to its destination — whether
+            across the city or across the country.
+          </p>
+
+          <!-- What's included list -->
+          <ul class="service-detail__list" aria-label="Service includes">
+            <li>Direct truck dispatch from our adda facility</li>
+            <li>Experienced drivers with knowledge of national routes</li>
+            <li>Suitable for all cargo sizes and product types</li>
+            <li>Flexible scheduling to match your delivery windows</li>
+            <li>Available for both partial and full truck loads</li>
+          </ul>
+
+          <!-- Step-by-step mini process -->
+          <div class="service-process">
+            <h5>How It Flows</h5>
+            <div class="service-process__steps">
+              <div class="sp-step">
+                <div class="sp-step__num">1</div>
+                <p>Cargo unloaded at adda and sorted</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">2</div>
+                <p>Loaded onto assigned truck</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">3</div>
+                <p>Dispatched to destination address</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">4</div>
+                <p>Delivered and confirmed with client</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 32px;">Enquire Now</a>
+        </div>
+
+        <!-- Visual side -->
+        <div class="service-detail__visual">
+          <div class="service-visual__banner">
+            <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+            <h3>Road Transport</h3>
+          </div>
+          <div class="service-visual__facts">
+            <div class="fact-card">
+              <div class="fact-card__value">50+</div>
+              <div class="fact-card__label">Trucks in Fleet</div>
+            </div>
+            <div class="fact-card">
+              <div class="fact-card__value">24h</div>
+              <div class="fact-card__label">Dispatch Window</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICE 2: RAILWAY FREIGHT
+       Even-numbered — visual on left, text on right (CSS reversal).
+  ============================================================ -->
+  <section class="service-detail" id="railway" aria-labelledby="railway-heading">
+    <div class="container">
+      <div class="service-detail__inner">
+
+        <div class="service-detail__content">
+          <span class="section-label">Service 02</span>
+          <h2 id="railway-heading">Railway Freight</h2>
+          <div class="heading-underline"></div>
+
+          <p>
+            For large-volume shipments or long-distance routes, railway freight
+            offers a cost-effective and reliable solution. We load goods into
+            train bogies (compartments) and dispatch through the national rail
+            network — this is where our railway freight service officially begins.
+          </p>
+
+          <ul class="service-detail__list">
+            <li>Goods loaded into dedicated train bogies at our facility</li>
+            <li>Ideal for high-volume, long-haul cargo</li>
+            <li>More economical than road for bulk shipments</li>
+            <li>Scheduled rail dispatch coordination managed by our team</li>
+            <li>Offloading and last-mile delivery at the destination end</li>
+          </ul>
+
+          <div class="service-process">
+            <h5>How It Flows</h5>
+            <div class="service-process__steps">
+              <div class="sp-step">
+                <div class="sp-step__num">1</div>
+                <p>Goods prepared and sorted for rail dispatch</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">2</div>
+                <p>Loaded into train bogies at designated rail point</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">3</div>
+                <p>Freight service begins — goods in transit via rail</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">4</div>
+                <p>Unloaded at destination station, last-mile arranged</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 32px;">Enquire Now</a>
+        </div>
+
+        <div class="service-detail__visual">
+          <div class="service-visual__banner">
+            <svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2H18v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zm-5 5h4v3H7V7zm10 8.5c0 .83-.67 1.5-1.5 1.5h-7c-.83 0-1.5-.67-1.5-1.5V12h10v3.5zm0-5.5h-4V7h4v3z"/></svg>
+            <h3>Railway Freight</h3>
+          </div>
+          <div class="service-visual__facts">
+            <div class="fact-card">
+              <div class="fact-card__value">Bulk</div>
+              <div class="fact-card__label">Volume Capacity</div>
+            </div>
+            <div class="fact-card">
+              <div class="fact-card__value">Low</div>
+              <div class="fact-card__label">Cost Per Unit</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICE 3: AIR FREIGHT
+  ============================================================ -->
+  <section class="service-detail" id="air" aria-labelledby="air-heading">
+    <div class="container">
+      <div class="service-detail__inner">
+
+        <div class="service-detail__content">
+          <span class="section-label">Service 03</span>
+          <h2 id="air-heading">Air Freight</h2>
+          <div class="heading-underline"></div>
+
+          <p>
+            When speed is the priority, our air freight coordination service
+            gets your cargo on the fastest possible route. We handle the
+            logistics of preparing, documenting, and dispatching goods through
+            air channels — minimising delays from arrival to departure.
+          </p>
+
+          <ul class="service-detail__list">
+            <li>Priority handling for time-sensitive cargo</li>
+            <li>Documentation and compliance support</li>
+            <li>Coordination with airport cargo terminals</li>
+            <li>Suitable for lightweight, high-value shipments</li>
+            <li>Fastest transit times across the transport modes we offer</li>
+          </ul>
+
+          <div class="service-process">
+            <h5>How It Flows</h5>
+            <div class="service-process__steps">
+              <div class="sp-step">
+                <div class="sp-step__num">1</div>
+                <p>Cargo assessed and packaged for air transport</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">2</div>
+                <p>Documents prepared and filed with carrier</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">3</div>
+                <p>Goods transported to cargo terminal</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">4</div>
+                <p>Airborne and on track to destination</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 32px;">Enquire Now</a>
+        </div>
+
+        <div class="service-detail__visual">
+          <div class="service-visual__banner">
+            <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+            <h3>Air Freight</h3>
+          </div>
+          <div class="service-visual__facts">
+            <div class="fact-card">
+              <div class="fact-card__value">Fast</div>
+              <div class="fact-card__label">Transit Speed</div>
+            </div>
+            <div class="fact-card">
+              <div class="fact-card__value">Priority</div>
+              <div class="fact-card__label">Handling Level</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICE 4: CONTAINER FREIGHT
+  ============================================================ -->
+  <section class="service-detail" id="container" aria-labelledby="container-heading">
+    <div class="container">
+      <div class="service-detail__inner">
+
+        <div class="service-detail__content">
+          <span class="section-label">Service 04</span>
+          <h2 id="container-heading">Container Freight Service</h2>
+          <div class="heading-underline"></div>
+
+          <p>
+            Our container freight service involves receiving goods in the
+            importer's original shipping containers, carefully unloading them,
+            and reloading them into our own managed containers. This ensures
+            better handling, accountability, and streamlined transportation
+            to the final destination.
+          </p>
+
+          <ul class="service-detail__list">
+            <li>Receive goods from original import containers</li>
+            <li>Careful unloading, inspection, and sorting at our adda</li>
+            <li>Reloaded into SwiftCargo-managed containers</li>
+            <li>Better control over handling and chain of custody</li>
+            <li>Suitable for mixed cargo and multi-destination shipments</li>
+          </ul>
+
+          <div class="service-process">
+            <h5>How It Flows</h5>
+            <div class="service-process__steps">
+              <div class="sp-step">
+                <div class="sp-step__num">1</div>
+                <p>Original import container received at adda</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">2</div>
+                <p>Goods unloaded, inspected, sorted by destination</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">3</div>
+                <p>Reloaded into SwiftCargo managed containers</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">4</div>
+                <p>Dispatched via road or rail to destination</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 32px;">Enquire Now</a>
+        </div>
+
+        <div class="service-detail__visual">
+          <div class="service-visual__banner">
+            <svg viewBox="0 0 24 24"><path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H4V8h4v4h2V8h4v4h2V8h4v8z"/></svg>
+            <h3>Container Freight</h3>
+          </div>
+          <div class="service-visual__facts">
+            <div class="fact-card">
+              <div class="fact-card__value">Managed</div>
+              <div class="fact-card__label">Containers</div>
+            </div>
+            <div class="fact-card">
+              <div class="fact-card__value">Full</div>
+              <div class="fact-card__label">Chain of Custody</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICE 5: WAREHOUSE & ADDA
+  ============================================================ -->
+  <section class="service-detail" id="warehouse" aria-labelledby="warehouse-heading">
+    <div class="container">
+      <div class="service-detail__inner">
+
+        <div class="service-detail__content">
+          <span class="section-label">Service 05</span>
+          <h2 id="warehouse-heading">Warehouse &amp; Adda</h2>
+          <div class="heading-underline"></div>
+
+          <p>
+            Our facility — the adda — is the operational heart of everything
+            we do. It is the first point of contact for every import container
+            we handle. All other services begin here.
+          </p>
+
+          <ul class="service-detail__list">
+            <li>Secure receipt of all incoming import containers</li>
+            <li>Full unloading by trained handlers</li>
+            <li>Cargo sorted and labelled by destination and mode</li>
+            <li>Short-term holding storage available while dispatch is arranged</li>
+            <li>Staging area for road, rail, and container reload operations</li>
+          </ul>
+
+          <div class="service-process">
+            <h5>What Happens Here</h5>
+            <div class="service-process__steps">
+              <div class="sp-step">
+                <div class="sp-step__num">1</div>
+                <p>Container arrives and is documented</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">2</div>
+                <p>Full unloading under supervision</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">3</div>
+                <p>Cargo staged and prepared for dispatch</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">4</div>
+                <p>Onward transport begins from this point</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 32px;">Enquire Now</a>
+        </div>
+
+        <div class="service-detail__visual">
+          <div class="service-visual__banner">
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            <h3>Warehouse &amp; Adda</h3>
+          </div>
+          <div class="service-visual__facts">
+            <div class="fact-card">
+              <div class="fact-card__value">Central</div>
+              <div class="fact-card__label">Operations Hub</div>
+            </div>
+            <div class="fact-card">
+              <div class="fact-card__value">All Modes</div>
+              <div class="fact-card__label">Handled Here</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICE 6: DOOR-TO-DOOR DELIVERY
+  ============================================================ -->
+  <section class="service-detail" id="door-to-door" aria-labelledby="dtd-heading">
+    <div class="container">
+      <div class="service-detail__inner">
+
+        <div class="service-detail__content">
+          <span class="section-label">Service 06</span>
+          <h2 id="dtd-heading">Door-to-Door Delivery</h2>
+          <div class="heading-underline"></div>
+
+          <p>
+            Our door-to-door delivery service means exactly that — we take
+            your cargo from our facility all the way to your factory, warehouse,
+            shop floor, or any address you specify. No coordination required
+            on your end; we handle every step.
+          </p>
+
+          <ul class="service-detail__list">
+            <li>Delivery directly to your factory, warehouse, or site</li>
+            <li>Any address in the country — we arrange the route</li>
+            <li>Coordination across road and last-mile delivery</li>
+            <li>Confirmation and documentation provided at drop-off</li>
+            <li>Available as an add-on to any of our freight services</li>
+          </ul>
+
+          <div class="service-process">
+            <h5>How It Flows</h5>
+            <div class="service-process__steps">
+              <div class="sp-step">
+                <div class="sp-step__num">1</div>
+                <p>Delivery address provided by client</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">2</div>
+                <p>Route planned and vehicle assigned</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">3</div>
+                <p>Cargo en route to specified location</p>
+              </div>
+              <div class="sp-step">
+                <div class="sp-step__num">4</div>
+                <p>Delivered and confirmed — service complete</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 32px;">Enquire Now</a>
+        </div>
+
+        <div class="service-detail__visual">
+          <div class="service-visual__banner">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <h3>Door-to-Door Delivery</h3>
+          </div>
+          <div class="service-visual__facts">
+            <div class="fact-card">
+              <div class="fact-card__value">Any</div>
+              <div class="fact-card__label">Destination</div>
+            </div>
+            <div class="fact-card">
+              <div class="fact-card__value">Full</div>
+              <div class="fact-card__label">Coverage</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       COMPARISON TABLE
+       Side-by-side feature comparison of all service modes.
+  ============================================================ -->
+  <section class="services-comparison" aria-labelledby="comparison-heading">
+    <div class="container">
+      <div class="services-comparison__header">
+        <span class="section-label" style="color: rgba(255,255,255,0.5);">Compare Services</span>
+        <h2 id="comparison-heading">Which Service Fits Your Needs?</h2>
+        <div class="heading-underline centered"></div>
+        <p>Use this table to quickly compare our services across key factors.</p>
+      </div>
+
+      <!-- Scrollable wrapper for mobile -->
+      <div class="comparison-table-wrap">
+        <table class="comparison-table" aria-label="Service comparison">
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              <th scope="col">Road</th>
+              <th scope="col">Railway</th>
+              <th scope="col">Air</th>
+              <th scope="col">Container</th>
+              <th scope="col">Door-to-Door</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Best For</td>
+              <td>Flexible delivery</td>
+              <td>Bulk / long-haul</td>
+              <td>Time-sensitive</td>
+              <td>Mixed cargo</td>
+              <td>Direct delivery</td>
+            </tr>
+            <tr>
+              <td>Speed</td>
+              <td>Medium</td>
+              <td>Medium</td>
+              <td><span class="table-check">Fast</span></td>
+              <td>Medium</td>
+              <td>Depends on mode</td>
+            </tr>
+            <tr>
+              <td>Volume Capacity</td>
+              <td>Medium–High</td>
+              <td><span class="table-check">Very High</span></td>
+              <td>Low–Medium</td>
+              <td>High</td>
+              <td>Any</td>
+            </tr>
+            <tr>
+              <td>Cost Efficiency</td>
+              <td>Medium</td>
+              <td><span class="table-check">High</span></td>
+              <td>Lower</td>
+              <td>Medium</td>
+              <td>Varies</td>
+            </tr>
+            <tr>
+              <td>Door-to-Door</td>
+              <td><span class="table-check">✓</span></td>
+              <td>Partial</td>
+              <td>Partial</td>
+              <td><span class="table-check">✓</span></td>
+              <td><span class="table-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Managed Containers</td>
+              <td><span class="table-cross">—</span></td>
+              <td><span class="table-cross">—</span></td>
+              <td><span class="table-cross">—</span></td>
+              <td><span class="table-check">✓</span></td>
+              <td><span class="table-cross">—</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer__top container">
+      <div class="footer__brand">
+        <div class="footer-logo">Swift<span>Cargo</span></div>
+        <p>Reliable freight and logistics solutions via road, rail, and air — serving importers with complete door-to-door service.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#road">Road Transport</a></li>
+          <li><a href="#railway">Railway Freight</a></li>
+          <li><a href="#air">Air Freight</a></li>
+          <li><a href="#container">Container Freight</a></li>
+          <li><a href="#door-to-door">Door-to-Door</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>123 Freight Road, Industrial Zone, Karachi</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>+92 300 000 0000</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span>info@swiftcargo.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <span>&copy; <span class="footer-year">2025</span> SwiftCargo Logistics. All rights reserved.</span>
+      <span>Freight &amp; Logistics Solutions</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

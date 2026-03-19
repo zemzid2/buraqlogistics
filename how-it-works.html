@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="See exactly how SwiftCargo handles your cargo — from container arrival to final delivery — step by step." />
+  <title>How It Works — SwiftCargo Logistics</title>
+
+  <!-- Global shared styles -->
+  <link rel="stylesheet" href="css/global.css" />
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="css/how-it-works.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar__logo" aria-label="SwiftCargo Home">
+        <div class="navbar__logo-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/>
+          </svg>
+        </div>
+        <span class="navbar__logo-text">Swift<span>Cargo</span></span>
+      </a>
+      <ul class="navbar__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="how-it-works.html" class="active">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="navbar__cta">Get a Quote</a>
+      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="navbar__mobile-menu" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" style="color: var(--color-orange); margin-top: 8px;">Get a Quote →</a>
+    </nav>
+  </nav>
+
+
+  <!-- ============================================================
+       PAGE HERO BANNER
+  ============================================================ -->
+  <header class="page-hero" role="banner">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">How It Works</span>
+      </nav>
+      <span class="section-label">The Full Process</span>
+      <h1>How Your Cargo Moves</h1>
+      <p>
+        A transparent, step-by-step look at exactly what happens from the
+        moment your container arrives at our adda to final delivery.
+      </p>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       PROCESS INTRO
+       Two-column layout: overview text left, simple diagram right.
+  ============================================================ -->
+  <section class="process-intro section-padding" aria-labelledby="intro-heading">
+    <div class="container">
+      <div class="process-intro__inner">
+
+        <!-- Left: description and mode badges -->
+        <div class="process-intro__content">
+          <span class="section-label">Overview</span>
+          <h2 id="intro-heading">One Process, Multiple Paths</h2>
+          <div class="heading-underline"></div>
+
+          <p>
+            Every freight journey with SwiftCargo begins the same way: your
+            container arrives at our central facility. From there, our team
+            takes over — unloading, sorting, and preparing cargo based on its
+            final destination and your preferred transport mode.
+          </p>
+
+          <p>
+            Whether you've chosen road, railway, or air, the process is
+            seamless from our end. For door-to-door clients, we handle
+            the entire chain from our adda to your doorstep.
+          </p>
+
+          <!-- Badge pills showing available transport modes -->
+          <div class="process-intro__badges" aria-label="Available transport modes">
+            <span class="badge">
+              <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+              Road
+            </span>
+            <span class="badge">
+              <svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2H18v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zm-5 5h4v3H7V7zm10 8.5c0 .83-.67 1.5-1.5 1.5h-7c-.83 0-1.5-.67-1.5-1.5V12h10v3.5zm0-5.5h-4V7h4v3z"/></svg>
+              Railway
+            </span>
+            <span class="badge">
+              <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+              Air
+            </span>
+            <span class="badge">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Door-to-Door
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: simple icon diagram showing the flow -->
+        <div class="process-intro__diagram" aria-label="Process flow diagram" aria-hidden="true">
+
+          <div class="diagram-row">
+            <div class="diagram-row__icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+            </div>
+            <span class="diagram-row__label">Container Arrives</span>
+          </div>
+
+          <div class="diagram-arrow">
+            <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+          </div>
+
+          <div class="diagram-row">
+            <div class="diagram-row__icon">
+              <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            </div>
+            <span class="diagram-row__label">Received at Adda</span>
+          </div>
+
+          <div class="diagram-arrow">
+            <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+          </div>
+
+          <div class="diagram-row">
+            <div class="diagram-row__icon">
+              <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+            </div>
+            <span class="diagram-row__label">Sorted &amp; Prepared</span>
+          </div>
+
+          <div class="diagram-arrow">
+            <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+          </div>
+
+          <div class="diagram-row">
+            <div class="diagram-row__icon">
+              <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+            </div>
+            <span class="diagram-row__label">Mode Dispatched</span>
+          </div>
+
+          <div class="diagram-arrow">
+            <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+          </div>
+
+          <div class="diagram-row">
+            <div class="diagram-row__icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            </div>
+            <span class="diagram-row__label">Delivered to Client</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       MAIN PROCESS TIMELINE
+       Detailed alternating timeline showing every step in depth.
+  ============================================================ -->
+  <section class="process-timeline" aria-labelledby="timeline-heading">
+    <div class="container">
+
+      <div class="process-timeline__header">
+        <span class="section-label">Step by Step</span>
+        <h2 id="timeline-heading">The Full Journey</h2>
+        <div class="heading-underline centered"></div>
+        <p>
+          Here is every stage your cargo goes through — from the moment the
+          container is received to the final signature at your destination.
+        </p>
+      </div>
+
+      <!-- Vertical alternating timeline -->
+      <div class="timeline" aria-label="Process timeline">
+
+        <!-- STEP 1: Container Received -->
+        <div class="timeline-item">
+          <div class="timeline-item__left">
+            <div class="timeline-card">
+              <div class="timeline-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+              </div>
+              <h4>Container Received</h4>
+              <p>
+                The importer's container arrives at our adda. Our team
+                documents its arrival, inspects the seal, and logs the
+                shipment details before any unloading begins.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item__center">
+            <div class="timeline-step-badge" aria-label="Step 1">1</div>
+          </div>
+          <div class="timeline-item__right"></div>
+        </div>
+
+        <!-- STEP 2: Cargo Unloaded -->
+        <div class="timeline-item">
+          <div class="timeline-item__left"></div>
+          <div class="timeline-item__center">
+            <div class="timeline-step-badge" aria-label="Step 2">2</div>
+          </div>
+          <div class="timeline-item__right">
+            <div class="timeline-card">
+              <div class="timeline-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              </div>
+              <h4>Cargo Unloaded at Adda</h4>
+              <p>
+                Our trained handlers carefully unload all goods from the
+                container. Items are sorted by destination, product type,
+                and assigned transport mode to prepare for dispatch.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Mode Decision -->
+        <div class="timeline-item">
+          <div class="timeline-item__left">
+            <div class="timeline-card">
+              <div class="timeline-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              </div>
+              <h4>Transport Mode Assigned</h4>
+              <p>
+                Based on the client's instructions and cargo type, the
+                appropriate transport mode is confirmed — road, railway,
+                air, or container freight — and dispatch is scheduled.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item__center">
+            <div class="timeline-step-badge" aria-label="Step 3">3</div>
+          </div>
+          <div class="timeline-item__right"></div>
+        </div>
+
+        <!-- STEP 4A: Road Dispatch -->
+        <div class="timeline-item">
+          <div class="timeline-item__left"></div>
+          <div class="timeline-item__center">
+            <div class="timeline-step-badge" aria-label="Step 4">4</div>
+          </div>
+          <div class="timeline-item__right">
+            <div class="timeline-card">
+              <div class="timeline-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+              </div>
+              <h4>Goods Loaded &amp; Dispatched</h4>
+              <p>
+                Cargo is loaded onto the assigned vehicle or bogie and
+                dispatched. For rail, this marks the official start of
+                the freight service. For road, the truck departs for
+                its destination.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5: In Transit -->
+        <div class="timeline-item">
+          <div class="timeline-item__left">
+            <div class="timeline-card">
+              <div class="timeline-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <h4>In Transit</h4>
+              <p>
+                Cargo is on the move. Our team monitors the shipment
+                and coordinates with drivers, rail operators, or air
+                handlers to ensure everything stays on schedule.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item__center">
+            <div class="timeline-step-badge" aria-label="Step 5">5</div>
+          </div>
+          <div class="timeline-item__right"></div>
+        </div>
+
+        <!-- STEP 6: Final Delivery -->
+        <div class="timeline-item">
+          <div class="timeline-item__left"></div>
+          <div class="timeline-item__center">
+            <div class="timeline-step-badge" aria-label="Step 6">6</div>
+          </div>
+          <div class="timeline-item__right">
+            <div class="timeline-card">
+              <div class="timeline-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </div>
+              <h4>Delivered &amp; Confirmed</h4>
+              <p>
+                Cargo arrives at the client's factory, warehouse, or
+                specified address. Delivery is confirmed, documentation
+                is completed, and the shipment is officially closed.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TRANSPORT MODE PATHS
+       Three cards showing the specific step-by-step flow for
+       road, railway, and door-to-door delivery.
+  ============================================================ -->
+  <section class="mode-paths" aria-labelledby="mode-paths-heading">
+    <div class="container">
+
+      <div class="mode-paths__header">
+        <span class="section-label">Mode-Specific Flows</span>
+        <h2 id="mode-paths-heading">How Each Transport Mode Works</h2>
+        <div class="heading-underline centered"></div>
+        <p>See the unique steps involved for each mode of transport we offer.</p>
+      </div>
+
+      <div class="mode-paths__grid">
+
+        <!-- Road Transport path -->
+        <article class="mode-card" aria-labelledby="road-mode-heading">
+          <div class="mode-card__header">
+            <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+            <h3 id="road-mode-heading">Road Transport</h3>
+          </div>
+          <div class="mode-card__steps">
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Container Arrival</h5>
+                <p>Container received and documented at adda</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Unloading &amp; Sort</h5>
+                <p>Goods unloaded and grouped by truck route</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Truck Loading</h5>
+                <p>Cargo loaded onto assigned truck at the adda</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Dispatch</h5>
+                <p>Truck departs for client's delivery address</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Delivery Complete</h5>
+                <p>Goods received at destination, confirmed</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Railway Freight path -->
+        <article class="mode-card" aria-labelledby="rail-mode-heading">
+          <div class="mode-card__header">
+            <svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2H18v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zm-5 5h4v3H7V7zm10 8.5c0 .83-.67 1.5-1.5 1.5h-7c-.83 0-1.5-.67-1.5-1.5V12h10v3.5zm0-5.5h-4V7h4v3z"/></svg>
+            <h3 id="rail-mode-heading">Railway Freight</h3>
+          </div>
+          <div class="mode-card__steps">
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Container Arrival</h5>
+                <p>Container received and unloaded at adda</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Rail Preparation</h5>
+                <p>Cargo sorted and grouped for bogie loading</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Bogie Loading</h5>
+                <p>Goods loaded into train compartments (bogies)</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Freight Service Begins</h5>
+                <p>Train dispatched — freight officially in transit</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Last-Mile Delivery</h5>
+                <p>Offloaded at destination, last-mile arranged</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Door-to-Door path -->
+        <article class="mode-card" aria-labelledby="dtd-mode-heading">
+          <div class="mode-card__header">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            <h3 id="dtd-mode-heading">Door-to-Door</h3>
+          </div>
+          <div class="mode-card__steps">
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Client Confirms Address</h5>
+                <p>Factory, warehouse, or any delivery location provided</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Cargo Handled at Adda</h5>
+                <p>Container received, unloaded, and cargo prepared</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Route Planned</h5>
+                <p>Best route chosen and vehicle assigned</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Direct Dispatch</h5>
+                <p>Cargo dispatched directly to specified address</p>
+              </div>
+            </div>
+            <div class="mode-step">
+              <div class="mode-step__dot" aria-hidden="true"></div>
+              <div class="mode-step__text">
+                <h5>Doorstep Delivery</h5>
+                <p>Delivered and signed off at the client's location</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FAQ ACCORDION
+       Common client questions about the process, answered.
+       Click logic handled by form.js (reused for accordions).
+  ============================================================ -->
+  <section class="faq" aria-labelledby="faq-heading">
+    <div class="container">
+
+      <div class="faq__header">
+        <span class="section-label">Common Questions</span>
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+        <div class="heading-underline centered"></div>
+        <p>Answers to the questions importers ask us most often.</p>
+      </div>
+
+      <div class="faq__grid">
+
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <div class="faq-item__question" role="button" tabindex="0" aria-expanded="false">
+            <h5>When does the freight service officially start?</h5>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-item__answer">
+            <p>
+              For railway shipments, the freight service officially begins once
+              goods are loaded into the train bogies and the train departs.
+              For road transport, it begins when the truck leaves our adda.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <div class="faq-item__question" role="button" tabindex="0" aria-expanded="false">
+            <h5>Do you handle the container unloading yourselves?</h5>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-item__answer">
+            <p>
+              Yes. Once your container arrives at our adda, our team manages
+              the entire unloading process. You do not need to be present —
+              we document everything and keep you informed.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <div class="faq-item__question" role="button" tabindex="0" aria-expanded="false">
+            <h5>What types of goods do you transport?</h5>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-item__answer">
+            <p>
+              We serve importers dealing in a wide range of products — from
+              raw materials and machinery to consumer goods, textiles, and
+              general merchandise. Contact us if you have specific cargo requirements.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <div class="faq-item__question" role="button" tabindex="0" aria-expanded="false">
+            <h5>What is container freight service exactly?</h5>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-item__answer">
+            <p>
+              In container freight, we receive your import container, unload
+              the goods, and then reload them into our own managed containers.
+              This gives us better control over handling and allows us to
+              consolidate or split shipments as needed.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <div class="faq-item__question" role="button" tabindex="0" aria-expanded="false">
+            <h5>Can you deliver to any location in the country?</h5>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-item__answer">
+            <p>
+              Yes. Our door-to-door service covers deliveries to factories,
+              warehouses, or any specified address across the country. Our road
+              and rail networks give us wide geographic reach.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item">
+          <div class="faq-item__question" role="button" tabindex="0" aria-expanded="false">
+            <h5>How do I get started or request a shipment?</h5>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-item__answer">
+            <p>
+              Simply fill out the inquiry form on our Contact page or call us
+              directly. Share your cargo details, preferred transport mode, and
+              destination — and we'll take care of the rest.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer__top container">
+      <div class="footer__brand">
+        <div class="footer-logo">Swift<span>Cargo</span></div>
+        <p>Reliable freight and logistics solutions via road, rail, and air — serving importers with complete door-to-door service.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#road">Road Transport</a></li>
+          <li><a href="services.html#railway">Railway Freight</a></li>
+          <li><a href="services.html#air">Air Freight</a></li>
+          <li><a href="services.html#container">Container Freight</a></li>
+          <li><a href="services.html#door-to-door">Door-to-Door</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>123 Freight Road, Industrial Zone, Karachi</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>+92 300 000 0000</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span>info@swiftcargo.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <span>&copy; <span class="footer-year">2025</span> SwiftCargo Logistics. All rights reserved.</span>
+      <span>Freight &amp; Logistics Solutions</span>
+    </div>
+  </footer>
+
+  <!-- main.js: navbar + active links -->
+  <!-- form.js: handles the FAQ accordion click logic -->
+  <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
