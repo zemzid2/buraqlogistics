@@ -157,13 +157,12 @@ document.addEventListener('DOMContentLoaded', function () {
      In production, replace the success block with an
      actual fetch() call to your backend or form service.
   ────────────────────────────────────────────────── */
-  form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent actual page reload
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent default page reload
 
-    // Run full validation
+    // Run full validation first — stop if any required field fails
     const isValid = validateForm();
     if (!isValid) {
-      // Scroll to the first error field
       const firstError = form.querySelector('.form-group.error input, .form-group.error select, .form-group.error textarea');
       if (firstError) {
         firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -172,20 +171,57 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    /* ── SUCCESS STATE ──
-       Hide the form and show the success message.
-       Replace this block with your actual form submission
-       logic (e.g., fetch to a backend endpoint or service
-       like Formspree / EmailJS).
+    /* ── SUBMIT TO WEB3FORMS ──
+       Collects all form fields (including hidden access_key),
+       sends them as JSON to the Web3Forms API, then shows
+       either the success message or an error to the user.
     ── */
-    const formWrap   = document.querySelector('.contact-form-wrap');
-    const successMsg = document.querySelector('.form-success');
 
-    if (formWrap && successMsg) {
-      form.style.display         = 'none';
-      formWrap.querySelector('h2').style.display = 'none';
-      formWrap.querySelector('p').style.display  = 'none';
-      successMsg.classList.add('visible');
+    // Disable the submit button and show a sending state
+    const submitBtn = form.querySelector('.form-submit');
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    try {
+      // Gather all form field values into a plain object
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      // Send to Web3Forms API as JSON
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // ── SUCCESS: hide the form, show the success message ──
+        const formWrap   = document.querySelector('.contact-form-wrap');
+        const successMsg = document.querySelector('.form-success');
+
+        if (formWrap && successMsg) {
+          form.style.display                               = 'none';
+          formWrap.querySelector('h2').style.display       = 'none';
+          formWrap.querySelector('p').style.display        = 'none';
+          successMsg.classList.add('visible');
+        }
+      } else {
+        // ── API returned an error ──
+        throw new Error(result.message || 'Submission failed.');
+      }
+
+    } catch (error) {
+      // ── Network error or API error — restore button and alert user ──
+      submitBtn.textContent = originalBtnText;
+      submitBtn.disabled    = false;
+      alert('Something went wrong. Please try again or contact us directly by phone or email.');
+      console.error('Web3Forms error:', error);
     }
   });
 
