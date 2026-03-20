@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Show after 20 seconds
-    setTimeout(showPopup, 20000);
+    setTimeout(showPopup, 15000);
 
     // Close button (X)
     const closeBtn = document.getElementById('waPopupClose');
