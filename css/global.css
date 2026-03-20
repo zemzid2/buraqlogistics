@@ -825,7 +825,7 @@ section .accent-line {
 /* ============================================================
    WHATSAPP POPUP — appears after 20 seconds
    ============================================================ */
-
+/*  */
 .wa-popup-overlay {
   position: fixed;
   inset: 0;
