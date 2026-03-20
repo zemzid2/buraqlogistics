@@ -131,8 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-});
-
 
   /* ──────────────────────────────────────────────────
      6. SCROLL REVEAL — IntersectionObserver
@@ -261,3 +259,4 @@ document.addEventListener('DOMContentLoaded', function () {
     if (chatBtn) chatBtn.addEventListener('click', hidePopup);
   })();
 
+});

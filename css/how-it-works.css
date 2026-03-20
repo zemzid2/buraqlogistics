@@ -491,7 +491,7 @@
 .tl-card {
   transition: transform 0.25s ease, box-shadow 0.25s ease,
               opacity 0.65s ease, /* reveal */
-              transform 0.65s ease; /* reveal */
+           /* reveal */
 }
 
 .tl-card:hover {
