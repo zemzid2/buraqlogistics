@@ -155,12 +155,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     revealEls.forEach(function (el, i) {
-      // Staggered delay for sibling elements
-      if (el.closest('.reveal-stagger')) {
-        el.style.transitionDelay = (i % 6) * 0.1 + 's';
-      }
-      revealObserver.observe(el);
-    });
+  if (el.closest('.reveal-stagger')) {
+    // Get index within its own parent, not global index
+    const siblings = Array.from(el.parentElement.children);
+    const localIndex = siblings.indexOf(el);
+    el.style.transitionDelay = localIndex * 0.15 + 's';
+  }
+  revealObserver.observe(el);
+});
   }
 
 
