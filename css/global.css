@@ -348,22 +348,37 @@ p {
   transition: transform 0.3s, opacity 0.3s;
 }
 
+
 /* Mobile menu */
 .navbar__mobile-menu {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 2px solid var(--orange);
+  box-shadow: var(--shadow-lg);
   position: absolute;
   top: var(--nav-height);
   left: 0;
   right: 0;
   background: var(--navy-mid);
-  flex-direction: column;
-  gap: 2px;
-  padding: 16px 24px 24px;
-  border-top: 2px solid var(--orange);
-  box-shadow: var(--shadow-lg);
+  /* Animation — slides down on open */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top-width: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease,
+              padding 0.3s ease, border-top-width 0.3s ease;
 }
 
-.navbar__mobile-menu.open { display: flex; }
+.navbar__mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
+  padding-top: 16px;
+  padding-bottom: 24px;
+  border-top-width: 2px;
+}
 
 .navbar__mobile-menu a {
   font-family: var(--font-heading);
@@ -995,4 +1010,155 @@ section .accent-line {
 @media (max-width: 480px) {
   .scroll-track { height: 36px; }
   .scroll-track__loco svg { height: 24px; }
+}
+
+
+/* ============================================================
+   WHATSAPP POPUP — appears after 20 seconds
+   ============================================================ */
+
+.wa-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  backdrop-filter: blur(3px);
+}
+
+.wa-popup-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Popup card */
+.wa-popup {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  padding: 40px 36px 32px;
+  max-width: 420px;
+  width: calc(100% - 40px);
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  transform: translateY(24px) scale(0.96);
+  transition: transform 0.4s ease, opacity 0.35s ease;
+  opacity: 0;
+}
+
+.wa-popup-overlay.visible .wa-popup {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Green WhatsApp icon circle */
+.wa-popup__icon {
+  width: 72px;
+  height: 72px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+.wa-popup__icon svg {
+  width: 38px;
+  height: 38px;
+  fill: var(--white);
+}
+
+.wa-popup h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.wa-popup p {
+  font-size: 0.92rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* Chat now button */
+.wa-popup__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px 24px;
+  background: #25d366;
+  color: var(--white);
+  border-radius: var(--r-sm);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+}
+
+.wa-popup__btn:hover {
+  background: #1ebe5d;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+  transform: translateY(-1px);
+}
+
+.wa-popup__btn svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--white);
+}
+
+/* Maybe later link */
+.wa-popup__dismiss {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: var(--gray-300);
+  cursor: pointer;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  text-decoration: underline;
+}
+
+.wa-popup__dismiss:hover { color: var(--gray-500); }
+
+/* Close X button */
+.wa-popup__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--gray-300);
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.2s;
+  font-family: var(--font-body);
+}
+
+.wa-popup__close:hover { color: var(--navy); }
+
+@media (max-width: 480px) {
+  .wa-popup { padding: 32px 24px 24px; }
+  .wa-popup h3 { font-size: 1.5rem; }
 }

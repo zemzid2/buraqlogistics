@@ -250,3 +250,47 @@ document.addEventListener('DOMContentLoaded', function () {
     updateTrain(); // run once on load
   }
 
+
+
+  /* ──────────────────────────────────────────────────
+     10. WHATSAPP POPUP — shows after 20 seconds
+     Uses sessionStorage so it only fires once per session.
+     User can dismiss it — won't show again until new session.
+  ────────────────────────────────────────────────── */
+  (function () {
+    // Don't show if already dismissed this session
+    if (sessionStorage.getItem('waDismissed')) return;
+
+    const overlay = document.getElementById('waPopupOverlay');
+    if (!overlay) return;
+
+    function showPopup() {
+      overlay.classList.add('visible');
+    }
+
+    function hidePopup() {
+      overlay.classList.remove('visible');
+      sessionStorage.setItem('waDismissed', '1');
+    }
+
+    // Show after 20 seconds
+    setTimeout(showPopup, 20000);
+
+    // Close button (X)
+    const closeBtn = document.getElementById('waPopupClose');
+    if (closeBtn) closeBtn.addEventListener('click', hidePopup);
+
+    // "Maybe later" link
+    const dismissBtn = document.getElementById('waPopupDismiss');
+    if (dismissBtn) dismissBtn.addEventListener('click', hidePopup);
+
+    // Click outside the card to close
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) hidePopup();
+    });
+
+    // Also hide when they click the chat button (they're going to WhatsApp)
+    const chatBtn = document.getElementById('waPopupChat');
+    if (chatBtn) chatBtn.addEventListener('click', hidePopup);
+  })();
+
