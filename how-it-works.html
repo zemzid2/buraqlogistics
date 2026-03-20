@@ -65,7 +65,7 @@
       <div class="hiw-intro__inner">
 
         <!-- Left: text -->
-        <div class="hiw-intro__content">
+        <div class="hiw-intro__content reveal-left">
           <span class="eyebrow">Overview</span>
           <h2>One Process, Multiple Paths</h2>
           <div class="accent-line"></div>
@@ -82,7 +82,7 @@
         </div>
 
         <!-- Right: flow diagram card -->
-        <div class="hiw-intro__diagram">
+        <div class="hiw-intro__diagram reveal-right">
           <div class="diag-row">
             <div class="diag-row__icon"><svg viewBox="0 0 24 24"><path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg></div>
             <span class="diag-row__text">Container Arrives</span>
@@ -129,7 +129,7 @@
         <!-- Step 1 -->
         <div class="tl-item">
           <div class="tl-left">
-            <div class="tl-card">
+            <div class="tl-card reveal-left">
               <div class="tl-card__icon"><svg viewBox="0 0 24 24"><path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg></div>
               <h4>Container Received</h4>
               <p>The importer's container arrives at our adda. Our team documents the arrival, inspects the seal, and logs the shipment before any unloading begins.</p>
@@ -144,7 +144,7 @@
           <div class="tl-left"></div>
           <div class="tl-center"><div class="tl-badge">2</div></div>
           <div class="tl-right">
-            <div class="tl-card">
+            <div class="tl-card reveal-right">
               <div class="tl-card__icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
               <h4>Cargo Unloaded at Adda</h4>
               <p>Our trained handlers carefully unload all goods. Items are sorted by destination, product type, and transport mode to prepare for dispatch.</p>
@@ -155,7 +155,7 @@
         <!-- Step 3 -->
         <div class="tl-item">
           <div class="tl-left">
-            <div class="tl-card">
+            <div class="tl-card reveal-left">
               <div class="tl-card__icon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div>
               <h4>Transport Mode Assigned</h4>
               <p>Based on the client's instructions and cargo type, the appropriate transport mode is confirmed and dispatch is scheduled.</p>
@@ -170,7 +170,7 @@
           <div class="tl-left"></div>
           <div class="tl-center"><div class="tl-badge">4</div></div>
           <div class="tl-right">
-            <div class="tl-card">
+            <div class="tl-card reveal-right">
               <div class="tl-card__icon"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg></div>
               <h4>Goods Loaded &amp; Dispatched</h4>
               <p>Cargo is loaded onto the assigned vehicle or bogie and dispatched. For rail, this marks the official start of the freight service.</p>
@@ -181,7 +181,7 @@
         <!-- Step 5 -->
         <div class="tl-item">
           <div class="tl-left">
-            <div class="tl-card">
+            <div class="tl-card reveal-left">
               <div class="tl-card__icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg></div>
               <h4>In Transit</h4>
               <p>Cargo is on the move. Our team monitors the shipment and coordinates with drivers, rail operators, or air handlers to keep everything on schedule.</p>
@@ -196,7 +196,7 @@
           <div class="tl-left"></div>
           <div class="tl-center"><div class="tl-badge">6</div></div>
           <div class="tl-right">
-            <div class="tl-card">
+            <div class="tl-card reveal-right">
               <div class="tl-card__icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
               <h4>Delivered &amp; Confirmed</h4>
               <p>Cargo arrives at the client's factory, warehouse, or address. Delivery is confirmed, documentation completed, and the shipment is closed.</p>
@@ -219,7 +219,7 @@
         <p>Detailed steps for each of our transport options.</p>
       </div>
 
-      <div class="mode-paths__grid">
+      <div class="mode-paths__grid reveal-stagger">
 
         <!-- Road -->
         <div class="mode-card">
@@ -281,7 +281,7 @@
         <p>Answers to the questions importers ask us most often.</p>
       </div>
 
-      <div class="faq-grid">
+      <div class="faq-grid reveal-stagger">
 
         <div class="faq-item">
           <div class="faq-item__q"><h5>When does the freight service officially start?</h5><span class="faq-toggle">+</span></div>
@@ -348,19 +348,9 @@
           </ul>
         </div>
         <div class="footer__col">
-          <h6>Contact</h6>.
-          <!-- adress -->
-          <div class="footer__contact-row">
-  <svg viewBox="0 0 24 24" style="flex-shrink:0;margin-top:3px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-  <span>Karachi Office — City Railway Station, Berth No. 16, Shed No. 14, I.I. Chundrigar Road, Opposite MCB Tower, Karachi, Pakistan.</span>
-          </div>
-
-          <div class="footer__contact-row">
-            <svg viewBox="0 0 24 24" style="flex-shrink:0;margin-top:3px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            <span>Faisalabad Office — Plot No. 137, Jhang Road, Truck Stand, Faisalabad, Pakistan.</span>
-          </div>
-
-          <div class="footer__contact-row"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span>+92 322 2800054</span></div>
+          <h6>Contact</h6>
+          <div class="footer__contact-row"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg><span>123 Freight Road, Industrial Zone, Karachi</span></div>
+          <div class="footer__contact-row"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span>+92 300 000 0000</span></div>
           <div class="footer__contact-row"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>info@burraqlogistics.com</span></div>
         </div>
       </div>
@@ -373,15 +363,5 @@
 
   <script src="js/main.js"></script>
   <script src="js/form.js"></script>
-
-<a 
-  href="https://wa.me/923222800054?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20freight%20services."
-  class="whatsapp-float"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.118 1.523 5.847L.057 23.882l6.194-1.438A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.878 9.878 0 01-5.031-1.378l-.361-.214-3.741.981.999-3.648-.235-.374A9.855 9.855 0 012.106 12C2.106 6.58 6.58 2.106 12 2.106S21.894 6.58 21.894 12 17.42 21.894 12 21.894z"/></svg>
-</a>
-
 </body>
 </html>

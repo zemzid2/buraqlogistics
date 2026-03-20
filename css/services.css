@@ -396,3 +396,33 @@
   .svc-img-block { height: 280px; }
   .svc-nav__tab { padding: 16px 16px; font-size: 0.72rem; }
 }
+
+/* ── Service detail section fade-in on scroll ── */
+.svc-detail__content.reveal-left,
+.svc-detail__visual.reveal-right {
+  transition-duration: 0.75s;
+}
+
+/* ── Fact cards pop in with stagger ── */
+.svc-fact {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.svc-fact:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* ── Comparison table rows highlight ── */
+.cmp-table tbody tr {
+  transition: background 0.18s ease;
+}
+
+/* ── Mode card hover lift (already have border, add transform) ── */
+.mode-card {
+  transition: border-color 0.2s, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mode-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}

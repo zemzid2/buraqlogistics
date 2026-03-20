@@ -579,30 +579,226 @@ footer {
   .section-pad    { padding: 72px 0; }
   .section-pad-lg { padding: 96px 0; }
 }
-/* ── WHATSAPP FLOATING BUTTON ── */
-.whatsapp-float {
-  position: fixed;
-  bottom: 36px;
-  right: 36px;
-  z-index: 9999;
+
+
+/* ============================================================
+   ANIMATIONS — Keyframes + Scroll Reveal System
+   Used across all pages. Classes applied via JS (main.js).
+   ============================================================ */
+
+/* ── Keyframes ── */
+
+/* Fade up — default reveal */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade in — simple opacity */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Subtle scale up */
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Orange underline grow — accent-line */
+@keyframes lineGrow {
+  from { width: 0; }
+  to   { width: 64px; }
+}
+
+/* Gentle float — WhatsApp button */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* Pulse ring — WhatsApp */
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ── Scroll Reveal Base States ──
+   Elements start invisible, JS adds .revealed to trigger animation
+── */
+.reveal,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal       { transform: translateY(28px); }
+.reveal-left  { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+
+/* Stagger children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+/* Triggered state — JS adds this */
+.reveal.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed,
+.reveal-stagger > *.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Hero entrance (CSS only — fires on page load) ── */
+.hero__content .eyebrow {
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.1s;
+}
+
+.hero__title {
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.25s;
+}
+
+.hero__subtitle {
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.4s;
+}
+
+.hero__actions {
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.55s;
+}
+
+.hero__stats-panel {
+  animation: slideInRight 0.9s ease both;
+  animation-delay: 0.4s;
+}
+
+/* ── Page hero (inner pages) entrance ── */
+.page-hero__content .eyebrow {
+  animation: fadeUp 0.6s ease both;
+  animation-delay: 0.1s;
+}
+
+.page-hero__content h1 {
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.2s;
+}
+
+.page-hero__content p {
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.35s;
+}
+
+/* ── Accent line animated width ── */
+.accent-line {
+  animation: none; /* default off — only trigger after reveal */
+  width: 0;
+  transition: width 0.6s ease 0.2s;
+}
+
+.revealed + .accent-line,
+.reveal.revealed ~ .accent-line,
+section .accent-line {
   width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #25d366;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 24px rgba(37,211,102,0.5);
-  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Override for sections that are always visible */
+.hero .accent-line,
+.page-hero .accent-line {
+  width: 64px;
+  animation: none;
+}
+
+/* ── Navbar scrolled state ── */
+.navbar.scrolled {
+  box-shadow: 0 4px 32px rgba(0,0,0,0.45);
+}
+
+/* ── WhatsApp button float + pulse ── */
+.whatsapp-float {
+  animation: float 3.5s ease-in-out infinite, pulseRing 2.5s ease-out infinite;
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.12);
-  box-shadow: 0 10px 32px rgba(37,211,102,0.6);
+  animation: none; /* stop float on hover, show scale instead */
 }
 
-.whatsapp-float svg {
-  width: 34px;
-  height: 34px;
-  fill: #fff;
+/* ── Service cards — image zoom on hover (already in index.css,
+   adding a subtle card lift) ── */
+.svc-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* ── Value cards lift (about page) ── */
+.val-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.2s;
+}
+
+/* ── Info cards (contact page) ── */
+.info-card {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.info-card:hover {
+  transform: translateX(4px);
+}
+
+/* ── Footer links underline slide ── */
+.footer__col ul li a {
+  position: relative;
+}
+
+.footer__col ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--orange);
+  transition: width 0.25s ease;
+}
+
+.footer__col ul li a:hover::after {
+  width: 100%;
+}
+
+/* ── Btn micro-interaction — already have hover,
+   adding active press feel ── */
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ── Reduce motion — respect user preference ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal, .reveal-left, .reveal-right,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

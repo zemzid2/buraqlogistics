@@ -486,3 +486,25 @@
 
   .tl-badge { width: 44px; height: 44px; font-size: 1rem; }
 }
+
+/* ── Timeline card hover lift ── */
+.tl-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+              opacity 0.65s ease, /* reveal */
+              transform 0.65s ease; /* reveal */
+}
+
+.tl-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+/* ── FAQ item open transition ── */
+.faq-item {
+  transition: box-shadow 0.25s ease;
+}
+
+/* ── Mode step dot pulse on card hover ── */
+.mode-card:hover .mode-step__dot:first-child {
+  animation: pulseRing 1.5s ease-out infinite;
+}

@@ -132,3 +132,88 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+
+  /* ──────────────────────────────────────────────────
+     6. SCROLL REVEAL — IntersectionObserver
+     Adds .revealed class when elements enter viewport.
+     Elements start invisible via CSS, animate in on scroll.
+  ────────────────────────────────────────────────── */
+  const revealEls = document.querySelectorAll(
+    '.reveal, .reveal-left, .reveal-right, .reveal-stagger > *'
+  );
+
+  if (revealEls.length > 0) {
+    const revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target); // animate once only
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealEls.forEach(function (el, i) {
+      // Staggered delay for sibling elements
+      if (el.closest('.reveal-stagger')) {
+        el.style.transitionDelay = (i % 6) * 0.1 + 's';
+      }
+      revealObserver.observe(el);
+    });
+  }
+
+
+  /* ──────────────────────────────────────────────────
+     7. STATS COUNT-UP ANIMATION
+     Targets elements with data-count attribute.
+     Counts from 0 to the target number on scroll.
+  ────────────────────────────────────────────────── */
+  const countEls = document.querySelectorAll('[data-count]');
+
+  if (countEls.length > 0) {
+    const countObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        const el      = entry.target;
+        const target  = parseInt(el.getAttribute('data-count'), 10);
+        const suffix  = el.getAttribute('data-suffix') || '';
+        const dur     = 1800; // ms
+        const step    = 16;   // ~60fps
+        const inc     = target / (dur / step);
+        let current   = 0;
+
+        const timer = setInterval(function () {
+          current += inc;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          el.textContent = Math.floor(current) + suffix;
+        }, step);
+
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    countEls.forEach(function (el) { countObserver.observe(el); });
+  }
+
+
+  /* ──────────────────────────────────────────────────
+     8. NAVBAR SCROLL SHADOW
+     Adds stronger shadow when page is scrolled down.
+  ────────────────────────────────────────────────── */
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
+
