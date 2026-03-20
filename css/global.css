@@ -914,9 +914,11 @@ section .accent-line {
   text-decoration: none;
   transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
   box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+  animation: btnNudge 1.5s ease-in-out infinite;
 }
 
 .wa-popup__btn:hover {
+  animation: none;
   background: #1ebe5d;
   box-shadow: 0 6px 24px rgba(37,211,102,0.5);
   transform: translateY(-1px);
@@ -996,4 +998,9 @@ section .accent-line {
   width: 34px;
   height: 34px;
   fill: #fff;
+}
+
+@keyframes btnNudge {
+  0%, 60%, 100% { transform: translateY(0); }
+  30%            { transform: translateY(-6px); }
 }
