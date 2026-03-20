@@ -220,40 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /* ──────────────────────────────────────────────────
-     9. SCROLL TRAIN PROGRESS
-     Moves the locomotive SVG left→right based on
-     how far the user has scrolled down the page.
-  ────────────────────────────────────────────────── */
-  const loco       = document.getElementById('scrollLoco');
-  const trackFill  = document.getElementById('scrollFill');
-  const trackLabel = document.getElementById('scrollLabel');
-  const track      = document.querySelector('.scroll-track');
-
-  if (loco && track) {
-    function updateTrain() {
-      const scrollTop  = window.scrollY || window.pageYOffset;
-      const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
-      const progress   = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
-      const trackW     = track.offsetWidth;
-      const locoW      = loco.offsetWidth;
-      const maxLeft    = trackW - locoW - 56; /* 56px padding from right edge */
-      const leftPx     = Math.max(0, progress * maxLeft);
-
-      loco.style.left = leftPx + 'px';
-
-      if (trackFill)  trackFill.style.width  = (progress * 100) + '%';
-      if (trackLabel) trackLabel.textContent  = Math.round(progress * 100) + '%';
-    }
-
-    window.addEventListener('scroll', updateTrain, { passive: true });
-    window.addEventListener('resize', updateTrain, { passive: true });
-    updateTrain(); // run once on load
-  }
-
-
-
-  /* ──────────────────────────────────────────────────
-     10. WHATSAPP POPUP — shows after 20 seconds
+     9. WHATSAPP POPUP — shows after 20 seconds
      Uses sessionStorage so it only fires once per session.
      User can dismiss it — won't show again until new session.
   ────────────────────────────────────────────────── */
