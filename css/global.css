@@ -195,7 +195,7 @@ p {
   background: var(--orange);
   color: var(--white);
   border-color: var(--orange);
-  animation: ctaPulse 0.6s ease-in-out infinite;
+  animation: ctaPulse 2s ease-in-out infinite;
 }
 .btn-primary:hover {
   background: var(--orange-dk);
