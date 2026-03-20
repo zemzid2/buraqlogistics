@@ -850,7 +850,7 @@ section .accent-line {
   position: relative;
   box-shadow: var(--shadow-xl);
   transform: translateY(24px) scale(0.96);
-  transition: transform 0.4s ease, opacity 0.35s ease;
+  transition: transform 0.9s ease, opacity 0.35s ease;
   opacity: 0;
 }
 
